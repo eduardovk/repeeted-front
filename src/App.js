@@ -8,13 +8,14 @@ function App() {
         <div class="imagem-container">
           <div class="imagem"></div>
         </div>
-        <div class="music-info">
-          <div class="music-header">
+        <div class="artist-info">
+          <div class="artist-header">
             <div class="artist-title">Thirty Seconds to Mars</div>
           </div>
-          <div class="music-footer">
-            <div class="musics-qt">Músicas analisadas: 206</div>
-            <div class="words-qt">Palavras analisadas: 5689</div>
+          <div class="artist-footer">
+            <div class="songs-analyzed">Músicas analisadas: 999</div>
+            <div class="words-analyzed">Palavras analisadas: 999999</div>
+            <div class="like-share">Like  Share</div>
           </div>
         </div>
 
