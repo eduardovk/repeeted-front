@@ -1,0 +1,82 @@
+@media (min-width: 450px) {
+    .artist-container {
+        display: flex;
+    }
+    .songs-analyzed, .words-analyzed {
+        justify-content: flex-start !important;
+        flex-basis: auto !important;
+    }
+    .artist-header {
+        justify-content: flex-start !important;
+    }
+    .like-share{
+        justify-content: flex-end !important;
+    }
+}
+
+.artist-image {
+    display: flex;
+    justify-content: center;
+}
+
+.image-cover {
+    background-color: green;
+    width: 150px;
+    height: 150px;
+}
+
+.artist-info {
+    background-color: yellow;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-header {
+    background-color: red;
+    flex-basis: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.artist-title {
+    display: flex;
+    align-items: center;
+}
+
+.artist-footer {
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 40%;
+    
+}
+
+.songs-analyzed {
+    background-color: purple;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-width: 195px;
+    flex-basis: 100%;
+
+}
+
+.words-analyzed {
+    background-color: violet;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    min-width: 195px;
+    flex-basis: 100%;
+}
+
+.like-share{
+    background-color: goldenrod;
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}

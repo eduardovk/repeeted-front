@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ArtistInfo from './Components/ArtistInfo';
+import WordCloud from './Components/WordCloud';
+import Tags from './Components/Tags'
 
 function App() {
   return (
     <div className="App">
-      <div class="container">
-        <div class="imagem-container">
-          <div class="imagem"></div>
-        </div>
-        <div class="artist-info">
-          <div class="artist-header">
-            <div class="artist-title">Thirty Seconds to Mars</div>
-          </div>
-          <div class="artist-footer">
-            <div class="songs-analyzed">Músicas analisadas: 999</div>
-            <div class="words-analyzed">Palavras analisadas: 999999</div>
-            <div class="like-share">Like  Share</div>
-          </div>
-        </div>
-
+      <div className="container">
+        <ArtistInfo />
+        <WordCloud />
+        <Tags />
       </div>
     </div>
   );
