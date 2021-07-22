@@ -1,17 +1,35 @@
 .tags-container{
     display: flex;
     align-items: center;
-}
-
-.genre-tags{
-    padding: 0;
-    list-style: none;
-    display: flex;
     flex-wrap: wrap;
+    background-color: gold;
 }
 
-.genre-tags li{
+.tags-container h3{
+    display: flex;
+    margin: 0;
+    order: 1;
+}
+
+.tags-container span{
     background-color: gainsboro;
     margin: 5px;
     padding: 5px;
+    order: 2;
+}
+
+.share-report{
+    background-color: greenyellow;
+    flex-grow: 1;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: flex-end !important;
+    order: 0;
+}
+
+@media (min-width: 570px) {
+    .share-report{
+        flex-basis: 15%;
+        order: 3;
+    }
 }
