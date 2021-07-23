@@ -3,6 +3,8 @@
     align-items: center;
     flex-wrap: wrap;
     background-color: gold;
+    position: relative;
+    padding-right: 85px;
 }
 
 .tags-container h3{
@@ -19,12 +21,14 @@
 }
 
 .share-report{
+    width: 75px;
+    padding: 5px;
     background-color: greenyellow;
-    flex-grow: 1;
-    flex-basis: 100%;
+    position: absolute;
     display: flex;
-    justify-content: flex-end !important;
-    order: 0;
+    justify-content: space-between;
+    right: 0;
+    top: 0;
 }
 
 @media (min-width: 570px) {

@@ -1,0 +1,43 @@
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 0;
+  }
+
+  .accordion div{
+    font-size: 15px;
+
+  }
+
+  .accordion-title{
+    flex-grow: 1;
+  }
+
+  .see-more{
+    display: flex;
+    align-items: center;
+  }
+
+  .active, .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  .panel {
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .panel span{
+    background-color: gainsboro;
+    margin: 5px;
+    padding: 5px;
+    order: 2;
+}

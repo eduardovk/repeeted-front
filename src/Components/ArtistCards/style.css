@@ -1,0 +1,46 @@
+.artist-cards-container{
+    max-width: 700px;
+    display: flex;
+    /* background-color: lemonchiffon; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:25px
+
+}
+
+.artist-card img{
+    width: 100%;
+}
+
+.artist-card{
+    /* background-color: pink; */
+    max-width: 90%;
+    position: relative;
+}
+
+.card-title{
+    width: 96%;
+    height: 20%;
+    background-color: rgba(0,0,0,.8);
+    position: absolute;
+    bottom: 5%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2%;
+}
+
+@media (min-width: 470px) {
+    .artist-card{
+        max-width: 45%;
+    }
+}
+
+@media (min-width: 600px) {
+    .artist-card{
+        max-width: 30%;
+    }
+}
+
