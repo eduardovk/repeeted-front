@@ -1,3 +1,9 @@
+.main{
+    max-width: 1100px;
+    background-color: lightgrey;
+    margin: 0 auto;
+}
+
 .container{
     max-width: 700px;
     margin: 0 auto;
