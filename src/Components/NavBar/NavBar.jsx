@@ -14,6 +14,7 @@ function NavBar() {
                     <li>Home</li>
                     <li>Sobre</li>
                     <li>Como Funciona</li>
+                    <li>Contato</li>
                     <li>Doar</li>
                 </ul>
                 <div className="menu-icon">
@@ -23,6 +24,7 @@ function NavBar() {
                     <span>Home</span>
                     <span>Sobre</span>
                     <span>Como Funciona</span>
+                    <span>Contato</span>
                     <span>Doar</span>
                 </div>
             </div>
