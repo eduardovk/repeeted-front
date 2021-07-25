@@ -5,16 +5,20 @@ function ArtistInfo() {
     return (
         <div className="artist-container">
             <div className="artist-image">
-                <div className="image-cover"></div>
+                <img className="image-cover" src="https://images.genius.com/5ff67a7842c056be139b272de8f8bd83.1000x1000x1.jpg" />
             </div>
             <div className="artist-info">
                 <div className="artist-header">
                     <div className="artist-title">Thirty Seconds to Mars</div>
                 </div>
                 <div className="artist-footer">
-                    <div className="songs-analyzed">Músicas analisadas: 999</div>
-                    <div className="words-analyzed">Palavras analisadas: 999999</div>
-                    <div className="like-share">Like  Share</div>
+                    <div className="songs-analyzed">
+                        <span><span className="a-total">999</span>Músicas analisadas</span>
+                    </div>
+                    <div className="words-analyzed">
+                        <span><span className="a-total">999999</span>Palavras analisadas</span>
+                    </div>
+                    {/* <div className="like-share"><span>Like  Share</span></div> */}
                 </div>
             </div>
         </div>

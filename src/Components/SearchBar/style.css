@@ -11,7 +11,7 @@
 .alphabet{
     flex-basis: 100%;
     display: none;
-    margin: 5px 0 5px 0;
+    margin: 5px 0 15px 0;
     padding: 0 5px 0 5px;
     justify-content: space-around;
 }
@@ -26,7 +26,7 @@
 
 .search-container{
     width: 100%;
-    padding: 0 15px 0 15px;
+    padding: 15px 15px 0 15px;
     background-color: darkkhaki;
     display: flex;
     justify-content: center;
@@ -35,7 +35,6 @@
 
 .input-container{
     width: 100%;
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     background-color: rgb(233, 233, 233);
@@ -61,12 +60,51 @@
 
 }
 
-.db-info{
-    flex-basis: 100%;
+.fake-bar{
+    /* height: 35px; */
+    background-color: darkkhaki;
+    max-width: 550px;
+    margin: 0 auto;
 }
 
-.db-info table{
-    float: right;
+.genres-container{
+    padding: 8px 15px 8px 15px;
+}
+
+.main-genres{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all-genres{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.genre{
+    background-color: gainsboro;
+    padding: 0px 5px 2px 5px;
+    margin: 2px;
+}
+
+#show-genres, #hide-genres{
+    cursor: pointer;
+}
+
+#hide-genres{
+    display: flex;
+    justify-content: center;
+    flex-basis: 100%;
+    padding: 8px 0 8px 0;
+    margin: 2px 0 2px 0;
+}
+
+.g1, .g2, .g3{
+    display: none;
 }
 
 @media (min-width: 550px) {
@@ -79,12 +117,31 @@
     }
 
     .search-container{
-        width: 380px;
+        width: 520px;
     }
 }
 
 @media (min-width: 370px){
     .search-banner input{
         font-size: 1.3em;
+    }
+}
+
+
+@media (min-width: 348px){
+    .g1{
+        display: inline-block;
+    }
+}
+
+@media (min-width: 420px){
+    .g2{
+        display: inline-block;
+    }
+}
+
+@media (min-width: 522px){
+    .g3{
+        display: inline-block;
     }
 }

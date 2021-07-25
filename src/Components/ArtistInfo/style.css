@@ -12,6 +12,16 @@
     .like-share{
         justify-content: flex-end !important;
     }
+    .artist-info{
+        padding-left: 10px !important;
+    }
+}
+
+@media (min-width: 530px) {
+    .a-total{
+        margin-right: 0 !important;
+        display: block !important;
+    }
 }
 
 .artist-image {
@@ -26,26 +36,31 @@
 }
 
 .artist-info {
-    background-color: yellow;
+    background-color: white;
     flex: 1;
     display: flex;
     flex-direction: column;
+    padding-left: 0;
 }
 
 .artist-header {
-    background-color: red;
+    /* background-color: red; */
     flex-basis: 60%;
     display: flex;
     justify-content: center;
+    border-bottom: 1px solid black;
 }
 
 .artist-title {
     display: flex;
     align-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 800;
 }
 
 .artist-footer {
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
     flex-wrap: wrap;
     flex-basis: 40%;
@@ -53,28 +68,41 @@
 }
 
 .songs-analyzed {
-    background-color: purple;
+    /* background-color: purple; */
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
-    min-width: 195px;
+    /* min-width: 195px; */
     flex-basis: 100%;
 
 }
 
 .words-analyzed {
-    background-color: violet;
+    /* background-color: violet; */
     display: flex;
     flex: 1;
     align-items: center;
     justify-content: center;
-    min-width: 195px;
+    /* min-width: 195px; */
     flex-basis: 100%;
 }
 
+.songs-analyzed, .words-analyzed{
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.a-total{
+    font-size: 1.3em !important;
+    font-weight: 700 !important;
+    margin-right: 5px;
+    display: inline;
+}
+
 .like-share{
-    background-color: goldenrod;
+    /* background-color: goldenrod; */
     display: flex;
     flex-grow: 1;
     align-items: center;
