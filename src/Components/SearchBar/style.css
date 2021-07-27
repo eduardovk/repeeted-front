@@ -1,7 +1,19 @@
 .search-banner{
     max-width: 100%;
     padding-top: 40px;
-    background-color: darkgoldenrod;
+    /* background-color: #203e63; */
+
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#26405e+0,183860+100 */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#28405b+0,092f5e+100 */
+background: #28405b; /* Old browsers */
+background: -moz-linear-gradient(top,  #28405b 0%, #092f5e 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #28405b 0%,#092f5e 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #28405b 0%,#092f5e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28405b', endColorstr='#092f5e',GradientType=0 ); /* IE6-9 */
+
+
+
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,20 +26,28 @@
     margin: 5px 0 15px 0;
     padding: 0 5px 0 5px;
     justify-content: space-around;
+    height: 21px;
 }
 
 .alphabet a{
     text-decoration: none;
-    color: white;
-    font-weight: 900;
+    color: #a2b6ce;
+    font-weight: 500;
     flex-grow: 1;
     text-align: center;
+    transition: 0.1s;
+    font-family: "Oswald";
+}
+
+.alphabet a:hover{
+    color: #ffc145;
+    font-size: 1.2em;
 }
 
 .search-container{
     width: 100%;
     padding: 15px 15px 0 15px;
-    background-color: darkkhaki;
+    background-color: #ffc145;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -57,12 +77,18 @@
     cursor: pointer;
     height: 30px;
     padding: 0 2px 0 5px;
+    background-color: rgb(220,220,220);
+    transition: 0.2s;
+}
 
+.search-icon:hover{
+    background-color: #777;
+    color: white;
 }
 
 .fake-bar{
     /* height: 35px; */
-    background-color: darkkhaki;
+    background-color: #ffc145;
     max-width: 550px;
     margin: 0 auto;
 }
@@ -86,9 +112,17 @@
 }
 
 .genre{
-    background-color: gainsboro;
+    background-color: #eee;
+    color: #777;
     padding: 0px 5px 2px 5px;
     margin: 2px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.genre:hover{
+    background-color: #777;
+    color: white;
 }
 
 #show-genres, #hide-genres{

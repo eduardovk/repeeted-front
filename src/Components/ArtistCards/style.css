@@ -13,9 +13,21 @@
 }
 
 .artist-card{
-    /* background-color: pink; */
     max-width: 90%;
     position: relative;
+    cursor: pointer;
+}
+
+.card-white{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0);
+    position: absolute;
+    transition: 0.3s;
+}
+
+.artist-card:hover .card-white{
+    background-color: rgba(255,255,255,0.2);
 }
 
 .card-title{
@@ -30,6 +42,7 @@
     justify-content: center;
     text-align: center;
     padding: 2%;
+    font-family: Oswald;
 }
 
 @media (min-width: 470px) {

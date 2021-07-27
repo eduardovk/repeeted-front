@@ -1,12 +1,13 @@
 .accordion {
-    background-color: #eee;
-    color: #444;
+    background-color: #ffc145;
+    color: #191718;
     cursor: pointer;
     width: 100%;
-    transition: 0.4s;
+    transition: 0.2s;
     display: flex;
     align-items: center;
     padding: 10px 0 10px 0;
+    font-weight: 700;
   }
 
   .accordion div{
@@ -16,28 +17,38 @@
 
   .accordion-title{
     flex-grow: 1;
+    padding-left: 10px;
   }
 
   .see-more{
     display: flex;
     align-items: center;
+    padding-right: 5px;
   }
 
   .active, .accordion:hover {
-    background-color: #ccc; 
+    background-color: #d19620;
   }
   
   .panel {
     display: none;
-    background-color: white;
+    background-color: #ffc145;
     overflow: hidden;
     align-items: center;
     flex-wrap: wrap;
   }
 
   .panel span{
-    background-color: gainsboro;
+    background-color: #eee;
+    color: #777 !important;
+    cursor: pointer;
     margin: 5px;
     padding: 5px;
     order: 2;
+    transition: 0.2s;
+}
+
+.panel span:hover{
+  background-color: #777;
+  color: white !important;
 }

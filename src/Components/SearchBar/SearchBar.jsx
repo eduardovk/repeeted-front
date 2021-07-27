@@ -49,21 +49,21 @@ function SearchBar() {
             <div className="fake-bar">
                 <div className="genres-container">
                     <div className="main-genres" style={allGenres ? ({ display: "none" }) : ({ display: "flex" })}>
-                        <div className="genre">dance pop</div>
-                        <div className="genre">pop</div>
-                        <div className="genre">rock</div>
-                        <div className="genre">rap</div>
-                        <div className="genre g1">hip hop</div>
-                        <div className="genre g2">pop rap</div>
-                        <div className="genre g3">modern rock</div>
+                        <div className="genre shadow">dance pop</div>
+                        <div className="genre shadow">pop</div>
+                        <div className="genre shadow">rock</div>
+                        <div className="genre shadow">rap</div>
+                        <div className="genre g1  shadow">hip hop</div>
+                        <div className="genre g2  shadow">pop rap</div>
+                        <div className="genre g3  shadow">modern rock</div>
                         <div id="show-genres" onClick={() => { setAllGenres(true) }}><IoMdArrowDropdown size="1.2em" /></div>
                     </div>
                     <div className="all-genres" style={allGenres ? ({ display: "flex" }) : ({ display: "none" })}>
                         <div id="hide-genres" onClick={() => { setAllGenres(false) }}><IoMdArrowDropup size="1.2em" /></div>
-                        <div className="genre">dance pop</div>
-                        <div className="genre">pop</div>
-                        <div className="genre">rock</div>
-                        <div className="genre">rap</div>
+                        <div className="genre shadow">dance pop</div>
+                        <div className="genre shadow">pop</div>
+                        <div className="genre shadow">rock</div>
+                        <div className="genre shadow">rap</div>
                         <div className="genre">hip hop</div>
                         <div className="genre">pop rap</div>
                         <div className="genre">modern rock</div>

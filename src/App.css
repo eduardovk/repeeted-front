@@ -1,6 +1,6 @@
 .main{
     max-width: 1100px;
-    background-color: lightgrey;
+    background-color: #e0e5e9;
     margin: 0 auto;
 }
 
@@ -8,4 +8,20 @@
     max-width: 700px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.shadow{
+    box-shadow: 3px 3px 3px lightgrey;
+}
+
+h2{
+    margin-bottom: 7px;
+}
+
+.App{
+    /* background-color: #191718; */
+    background-image: url("images/custom_bg2.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size:cover;
 }

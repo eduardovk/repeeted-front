@@ -1,8 +1,9 @@
 nav{
-    background-color: cornflowerblue;
-    color: white;
+    background-color: #0a62d0;
+    color: #95c5ff;
     width: 100%;
     position: fixed;
+    z-index: 1;
 }
 
 .navbar{
@@ -13,6 +14,10 @@ nav{
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    font-size: .9em;
+    font-weight: 500;
+    font-family: "Oswald";
+    text-transform: uppercase;
 }
 
 .mobile-nav{
@@ -25,13 +30,14 @@ nav{
 .mobile-nav span{
     flex-basis: 100%;
     text-align: center;
-    margin: 1px 5px 1px 5px;
-    background-color: darkblue;
+    padding-top: 4px;
+    margin: 1px 5px 5px 5px;
     cursor: pointer;
+    border-top: 1px solid #95c5ff;
 }
 
-.navbar-logo{
-    background-color: teal;
+.mobile-nav span:hover{
+    color: #0c315e !important;
 }
 
 .navbar-list{
@@ -54,15 +60,18 @@ nav{
 .menu-icon span{
     padding: 2px 5px 0 5px;
     margin: 0 5px 0 5px;
-    background-color: teal;
     cursor: pointer;
 }
 
 .navbar-logo, .navbar-list li{
     padding: 5px;
     margin: 5px;
-    background-color: teal;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.navbar-list li:hover{
+    color: #0c315e !important;
 }
 
 @media (min-width: 550px) {

@@ -17,9 +17,12 @@ function App() {
         <SearchBar />
         <div className="container">
           <ArtistInfo />
-          <WordCloud />
-          <Tags />
-          <Accordion />
+          <h2>Palavras mais repetidas por Thirty Seconds to Mars</h2>
+          <div className="shadow animate__animated animate__backInUp">
+            <WordCloud />
+            <Tags />
+            <Accordion />
+          </div>
           <ArtistCards />
         </div>
       </div>

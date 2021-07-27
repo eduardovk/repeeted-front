@@ -15,7 +15,7 @@ function NavBar() {
                     <li>Sobre</li>
                     <li>Como Funciona</li>
                     <li>Contato</li>
-                    <li>Doar</li>
+                    <li style={{color: "#ffc145"}}>Doar</li>
                 </ul>
                 <div className="menu-icon">
                     <span onClick={()=>setShowMenu(!showMenu)}><GiHamburgerMenu size="1.8em" /></span>
@@ -25,7 +25,7 @@ function NavBar() {
                     <span>Sobre</span>
                     <span>Como Funciona</span>
                     <span>Contato</span>
-                    <span>Doar</span>
+                    <span style={{color: "#ffc145"}}>Doar</span>
                 </div>
             </div>
         </nav>
