@@ -4,8 +4,7 @@
     /* background-color: lemonchiffon; */
     flex-wrap: wrap;
     justify-content: space-around;
-    gap:25px
-
+    gap:25px;
 }
 
 .artist-card img{

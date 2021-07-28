@@ -1,0 +1,30 @@
+#back-top{
+    background-color: #13355d;
+    max-width: 1100px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#back-top div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#back-top div{
+    cursor: pointer;
+}
+
+#back-top span{
+   color: white;
+   font-weight: 600;
+   transition: 0.2s;
+}
+
+#back-top div:hover span{
+    color: #ffc145;
+ }
