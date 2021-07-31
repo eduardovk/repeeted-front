@@ -1,9 +1,11 @@
 .artist-cards-container{
     max-width: 700px;
+    min-height: 400px;
     display: flex;
     /* background-color: lemonchiffon; */
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     gap:25px;
 }
 
@@ -42,6 +44,16 @@
     text-align: center;
     padding: 2%;
     font-family: Oswald;
+}
+
+#no-result{
+    color: #b92941 !important;
+}
+
+#loading-box{
+    min-height: 400px;
+    display: flex;
+    align-items: center;
 }
 
 @media (min-width: 470px) {
