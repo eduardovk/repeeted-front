@@ -1,0 +1,9 @@
+.page-loading{
+    max-width: 700px;
+    min-height: 640px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
