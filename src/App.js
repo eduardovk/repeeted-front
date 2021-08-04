@@ -37,11 +37,14 @@ function App() {
                 <Home {...props} key={Math.random()} />
               )}
             />
-            <Route path="/words/:slug">
-              <Words />
+            <Route path="/search/:term">
+              <Search />
             </Route>
             <Route path="/search">
               <Search />
+            </Route>
+            <Route path="/:slug">
+              <Words />
             </Route>
           </Switch>
         </div>

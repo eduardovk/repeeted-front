@@ -61,6 +61,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28405b', end
 
 }
 
+.input-container button{
+    border:none;
+}
+
 .search-banner input{
     height: 30px;
     border: none;

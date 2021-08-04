@@ -1,51 +1,62 @@
 import React, { useState } from 'react';
 import "./style.css";
+import { Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
 import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io'
 
 function SearchBar() {
 
+    const [term, setTerm] = useState("");
     const [allGenres, setAllGenres] = useState(false);
+
+    function submitSearch(){
+        document.getElementById('search-form').submit();
+    }
 
     return (
         <>
-            <div className="search-banner">
-                <div className="alphabet">
-                    <a href="/">#</a>
-                    <a href="/">A</a>
-                    <a href="/">B</a>
-                    <a href="/">C</a>
-                    <a href="/">D</a>
-                    <a href="/">E</a>
-                    <a href="/">F</a>
-                    <a href="/">G</a>
-                    <a href="/">H</a>
-                    <a href="/">I</a>
-                    <a href="/">J</a>
-                    <a href="/">K</a>
-                    <a href="/">L</a>
-                    <a href="/">M</a>
-                    <a href="/">N</a>
-                    <a href="/">O</a>
-                    <a href="/">P</a>
-                    <a href="/">Q</a>
-                    <a href="/">R</a>
-                    <a href="/">S</a>
-                    <a href="/">T</a>
-                    <a href="/">U</a>
-                    <a href="/">V</a>
-                    <a href="/">W</a>
-                    <a href="/">X</a>
-                    <a href="/">Y</a>
-                    <a href="/">Z</a>
-                </div>
-                <div className="search-container">
-                    <div className="input-container">
-                        <input type="text" placeholder="Procure por artista ou banda" />
-                        <div className="search-icon"><FaSearch /></div>
+            <form id="search-form" action={"/search/" + term}>
+                <div className="search-banner">
+                    <div className="alphabet">
+                        <a href="/">#</a>
+                        <a href="/">A</a>
+                        <a href="/">B</a>
+                        <a href="/">C</a>
+                        <a href="/">D</a>
+                        <a href="/">E</a>
+                        <a href="/">F</a>
+                        <a href="/">G</a>
+                        <a href="/">H</a>
+                        <a href="/">I</a>
+                        <a href="/">J</a>
+                        <a href="/">K</a>
+                        <a href="/">L</a>
+                        <a href="/">M</a>
+                        <a href="/">N</a>
+                        <a href="/">O</a>
+                        <a href="/">P</a>
+                        <a href="/">Q</a>
+                        <a href="/">R</a>
+                        <a href="/">S</a>
+                        <a href="/">T</a>
+                        <a href="/">U</a>
+                        <a href="/">V</a>
+                        <a href="/">W</a>
+                        <a href="/">X</a>
+                        <a href="/">Y</a>
+                        <a href="/">Z</a>
+                    </div>
+                    <div className="search-container">
+                        <div className="input-container">
+                            <input type="text" placeholder="Procure por artista ou banda"
+                                onChange={(event) => { setTerm(event.target.value); }} />
+                            <span className="search-icon" onClick={()=>{submitSearch()}}>
+                                <FaSearch />
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
             <div className="fake-bar">
                 <div className="genres-container">
                     <div className="main-genres" style={allGenres ? ({ display: "none" }) : ({ display: "flex" })}>

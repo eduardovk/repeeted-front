@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import "animate.css";
 import RushWords from '../../images/rush.png';
@@ -6,33 +6,39 @@ import CannibalCorpseWords from '../../images/cannibal-corpse.png';
 import CardiBWords from '../../images/cardi-b.png';
 import ArtistCards from '../../Components/ArtistCards/ArtistCards';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 function Home() {
 
+    const [fieldTerm, setFieldTerm] = useState("");
     const artists = [
-        { name: 'Drake', img: 'https://images.genius.com/c6b5142a09ff5bd361d0f42a55692edc.1000x1000x1.jpg' },
-        { name: 'Eminem', img: 'https://images.genius.com/c674178296f3d65792a66f851fbc62fc.900x900x1.png' },
-        { name: 'Kanye West', img: 'https://images.genius.com/ff12f8b733e024adf005ff2a4aff4a07.639x639x1.jpg' },
-        { name: 'Kendrick Lamar', img: 'https://images.genius.com/25d8a9c93ab97e9e6d5d1d9d36e64a53.1000x1000x1.jpg' },
-        { name: 'The Weeknd', img: 'https://images.genius.com/f0813e600d43b8b43c94e8ba1dde880a.640x640x1.png' },
-        { name: 'Thirty Seconds to Mars', img: 'https://images.genius.com/5ff67a7842c056be139b272de8f8bd83.1000x1000x1.jpg' }
+        { name: 'Drake', slug: "drake", cover: 'https://images.genius.com/c6b5142a09ff5bd361d0f42a55692edc.1000x1000x1.jpg' },
+        { name: 'Eminem', slug: "eminem", cover: 'https://images.genius.com/c674178296f3d65792a66f851fbc62fc.900x900x1.png' },
+        { name: 'Billie Eilish', slug: "billie-eilish", cover: 'https://images.genius.com/1aa6c04aad3652556046bb3aabe96498.900x900x1.jpg' },
+        { name: 'Lana Del Rey', slug: "lana-del-rey", cover: 'https://images.genius.com/a90b579f172cd6ff536fc094109179a0.465x465x1.png' },
+        { name: 'The Weeknd', slug: "the-weeknd", cover: 'https://images.genius.com/f0813e600d43b8b43c94e8ba1dde880a.640x640x1.png' },
+        { name: 'Pink Floyd', slug: "pink-floyd", cover: 'https://images.genius.com/6b5c50912d99c3cf0eabfec5f427c452.1000x1000x1.jpg' }
     ]
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    function submitFieldSearch() {
+        document.getElementById('field-search-form').submit();
+    }
 
     const ExampleArtist = (props) => {
         return (
             <div className="example-artist">
-                <div className="example-white"></div>
-                <img src={props.img} />
-                <div className="example-footer">Ver mais {'>'}&nbsp;</div>
-            </div>
-        );
-    }
-
-    const SearchField = (props) => {
-        return (
-            <div id="home-search">
-                <input id="home-input" type="text" placeholder="Pesquise artista ou banda" />
-                <span><FaSearch id="search-btn" size={22} /></span>
+                <Link to={"/" + props.slug} onClick={() => { scrollToTop() }}>
+                    <div className="example-white"></div>
+                    <img src={props.img} />
+                    <div className="example-footer">Ver mais {'>'}&nbsp;</div>
+                </Link>
             </div>
         );
     }
@@ -57,13 +63,20 @@ function Home() {
                 </div>
             </div>
             <div id="examples-artists">
-                <ExampleArtist img={RushWords} />
-                <ExampleArtist img={CannibalCorpseWords} />
-                <ExampleArtist img={CardiBWords} />
+                <ExampleArtist img={RushWords} slug="rush" />
+                <ExampleArtist img={CannibalCorpseWords} slug="cannibal-corpse" />
+                <ExampleArtist img={CardiBWords} slug="cardi-b" />
             </div>
             <div className="container">
-                <SearchField />
-                <ArtistCards title="Mais pesquisados" artists={artists} />
+                {/* <SearchField fieldTerm={fieldTerm} setFieldTerm={setFieldTerm}/> */}
+                <form id="field-search-form" action={"/search/" + fieldTerm}>
+                    <div id="home-search">
+                        <input id="home-input" type="text" placeholder="Pesquise artista ou banda"
+                            value={fieldTerm} onChange={(event) => { setFieldTerm(event.target.value); }} />
+                        <span><FaSearch id="search-btn" size={22} onClick={() => { submitFieldSearch() }} /></span>
+                    </div>
+                </form >
+                <ArtistCards title="Mais pesquisados" loading={false} artists={artists} />
             </div>
         </div>
 

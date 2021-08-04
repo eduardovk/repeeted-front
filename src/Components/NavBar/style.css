@@ -1,6 +1,6 @@
 nav{
     background-color: #0a62d0;
-    color: #95c5ff;
+    color: #95c5ff !important;
     width: 100%;
     position: fixed;
     z-index: 1;
@@ -72,6 +72,13 @@ nav{
 
 .navbar-list li:hover{
     color: #0c315e !important;
+}
+
+.navbar-list a{
+    text-decoration: none !important;
+}
+.navbar-list a:visited{
+    color: #95c5ff !important;
 }
 
 @media (min-width: 550px) {
