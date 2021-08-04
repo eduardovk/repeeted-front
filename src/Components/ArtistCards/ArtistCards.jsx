@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./style.css";
 import Loading from '../../images/loading.svg';
+import Blank from '../../images/blank.png';
 import { Link } from "react-router-dom";
 
 function ArtistCards(props) {
@@ -9,8 +10,9 @@ function ArtistCards(props) {
         return (
             <div className="artist-card">
                 <Link to={"/" + props.slug} onClick={() => { scrollToTop() }}>
+                    <div className="artist-bg" style={{ backgroundImage: "url(" + props.img + ")", backgroundSize: "cover" }}></div>
                     <div className="card-white"></div>
-                    <img src={props.img} />
+                    <img src={Blank} />
                     <div className="card-title">{props.name}</div>
                 </Link>
             </div>
