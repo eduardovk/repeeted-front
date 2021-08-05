@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.css";
 import { Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
 import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io'
+const axios = require('axios').default;
 
 function SearchBar() {
 
     const [term, setTerm] = useState("");
-    const [allGenres, setAllGenres] = useState(false);
+    const [moreGenres, setMoreGenres] = useState(false);
+    const [genres, setGenres] = useState(null);
 
-    function submitSearch(){
+    function setSearchTerm(term) {
+        setTerm(term.trim());
+    }
+
+    function submitSearch() {
         document.getElementById('search-form').submit();
     }
+
+    useEffect(() => {
+        const url = 'http://localhost:8080/genres/80';
+        axios.get(url).then(res => {
+            setGenres(res.data);
+        }).catch(e => console.log(e));
+    }, []);
 
     return (
         <>
@@ -49,8 +62,8 @@ function SearchBar() {
                     <div className="search-container">
                         <div className="input-container">
                             <input type="text" placeholder="Procure por artista ou banda"
-                                onChange={(event) => { setTerm(event.target.value); }} />
-                            <span className="search-icon" onClick={()=>{submitSearch()}}>
+                                onChange={(event) => { setSearchTerm(event.target.value); }} />
+                            <span className="search-icon" onClick={() => { submitSearch() }}>
                                 <FaSearch />
                             </span>
                         </div>
@@ -59,43 +72,29 @@ function SearchBar() {
             </form>
             <div className="fake-bar">
                 <div className="genres-container">
-                    <div className="main-genres" style={allGenres ? ({ display: "none" }) : ({ display: "flex" })}>
-                        <div className="genre shadow">dance pop</div>
-                        <div className="genre shadow">pop</div>
-                        <div className="genre shadow">rock</div>
-                        <div className="genre shadow">rap</div>
-                        <div className="genre g1  shadow">hip hop</div>
-                        <div className="genre g2  shadow">pop rap</div>
-                        <div className="genre g3  shadow">modern rock</div>
-                        <div id="show-genres" onClick={() => { setAllGenres(true) }}><IoMdArrowDropdown size="1.2em" /></div>
+                    <div className="main-genres" style={moreGenres ? ({ display: "none" }) : ({ display: "flex" })}>
+                        <Link to="/genres/pop"><div className="genre shadow">pop</div></Link>
+                        <Link to="/genres/rock"><div className="genre shadow">rock</div></Link>
+                        <Link to="/genres/hip-hop"><div className="genre shadow">hip hop</div></Link>
+                        <Link to="/genres/country"><div className="genre shadow">country</div></Link>
+                        <Link to="/genres/trap"><div className="genre g0 shadow">trap</div></Link>
+                        <Link to="/genres/metal"><div className="genre g1 shadow">metal</div></Link>
+                        <Link to="/genres/rap"><div className="genre g2 shadow">rap</div></Link>
+                        <Link to="/genres/electropop"><div className="genre g3 shadow">electropop</div></Link>
+                        <div id="show-genres" onClick={() => { setMoreGenres(true) }}><IoMdArrowDropdown size="1.2em" /></div>
                     </div>
-                    <div className="all-genres" style={allGenres ? ({ display: "flex" }) : ({ display: "none" })}>
-                        <div id="hide-genres" onClick={() => { setAllGenres(false) }}><IoMdArrowDropup size="1.2em" /></div>
-                        <div className="genre shadow">dance pop</div>
-                        <div className="genre shadow">pop</div>
-                        <div className="genre shadow">rock</div>
-                        <div className="genre shadow">rap</div>
-                        <div className="genre">hip hop</div>
-                        <div className="genre">pop rap</div>
-                        <div className="genre">modern rock</div>
-                        <div className="genre">pop rock</div>
-                        <div className="genre">indie pop</div>
-                        <div className="genre">indie rock</div>
-                        <div className="genre">pop dance</div>
-                        <div className="genre">electropop</div>
-                        <div className="genre">underground hip hop</div>
-                        <div className="genre">indie folk</div>
-                        <div className="genre">trap</div>
-                        <div className="genre">french hip hop</div>
-                        <div className="genre">soft rock</div>
-                        <div className="genre">mellow gold</div>
-                        <div className="genre">folk rock</div>
-                        <div className="genre">alternative metal</div>
-                        <div className="genre">post-teen pop</div>
-                        <div className="genre">alternative rock</div>
-                        <div className="genre">german hip hop</div>
-                        <div className="genre">southern hip hop</div>
-                        <div className="genre">latin</div>
+                    <div className="more-genres" style={moreGenres ? ({ display: "flex" }) : ({ display: "none" })}>
+                        <div id="hide-genres" onClick={() => { setMoreGenres(false) }}><IoMdArrowDropup size="1.2em" /></div>
+                        {genres && (<>
+                            {genres.map((genre, idx) => (
+                                <Link key={idx} className="no-decor" to={"/genres/" + genre.slug}>
+                                    <div className="genre shadow">{genre.genre}</div>
+                                </Link>
+                            ))}
+                            <span id="see-all-genres">
+                                <Link className="no-decor" to="/genres/" onClick={() => { setMoreGenres(false) }}>Ver todos</Link>
+                            </span>
+                        </>)}
                     </div>
                 </div>
             </div>

@@ -20,6 +20,10 @@ function Home() {
         { name: 'Pink Floyd', slug: "pink-floyd", cover: 'https://images.genius.com/6b5c50912d99c3cf0eabfec5f427c452.1000x1000x1.jpg' }
     ]
 
+    function setFieldSearchTerm(term) {
+        setFieldTerm(term.trim());
+    }
+
     function scrollToTop() {
         window.scrollTo({
             top: 0,
@@ -68,11 +72,10 @@ function Home() {
                 <ExampleArtist img={CardiBWords} slug="cardi-b" />
             </div>
             <div className="container">
-                {/* <SearchField fieldTerm={fieldTerm} setFieldTerm={setFieldTerm}/> */}
                 <form id="field-search-form" action={"/search/" + fieldTerm}>
                     <div id="home-search">
                         <input id="home-input" type="text" placeholder="Pesquise artista ou banda"
-                            value={fieldTerm} onChange={(event) => { setFieldTerm(event.target.value); }} />
+                            onChange={(event) => { setFieldSearchTerm(event.target.value); }} />
                         <span><FaSearch id="search-btn" size={22} onClick={() => { submitFieldSearch() }} /></span>
                     </div>
                 </form >

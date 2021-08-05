@@ -3,9 +3,7 @@
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    /* padding-right: 85px;
-    padding-left: 10px;
-    padding-bottom: 5px; */
+    min-height: 40px;
     padding: 0 85px 5px 10px;
     background-color: white;
 }
@@ -16,12 +14,17 @@
     order: 1;
 }
 
+.tags-container a{
+    order: 2;
+    margin: 5px;
+}
+
 .tags-container span{
     background-color: #eee;
     color: #777 !important;
-    margin: 5px;
+    /* margin: 5px; */
     padding: 2px 5px 2px 5px;
-    order: 2;
+    /* order: 2; */
     transition: 0.2s;
 }
 

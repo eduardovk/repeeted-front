@@ -13,6 +13,7 @@ function Words() {
     const [loading, setLoading] = useState(true);
     const [artist, setArtist] = useState(null);
     const [songs, setSongs] = useState(null);
+    const [genres, setGenres] = useState([]);
     const [songsData, setSongsData] = useState(null);
 
     useEffect(() => {
@@ -22,6 +23,7 @@ function Words() {
                 if (res.data && res.data.artist) {
                     setArtist(res.data.artist);
                     setSongs(res.data.songs);
+                    setGenres(res.data.genres);
                     let totalWords = 0;
                     res.data.songs.map(s => { totalWords += s.analyzed });
                     setSongsData({
@@ -42,7 +44,7 @@ function Words() {
                     <h2>Palavras mais repetidas por {artist.name}</h2>
                     <div className="shadow animate__animated animate__backInUp">
                         <WordCloud words={artist.words} />
-                        <Tags />
+                        <Tags genres={genres} />
                         <Accordion total_songs={songsData.total_songs} songs={songs} />
                     </div>
                     <ArtistCards title="Artistas relacionados" />
