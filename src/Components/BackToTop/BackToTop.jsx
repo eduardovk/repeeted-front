@@ -1,16 +1,9 @@
 import React from 'react';
 import './style.css';
 import { AiOutlineToTop } from 'react-icons/ai';
+import { scrollToTop } from '../../Helpers';
 
 function BackToTop() {
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }
-
     return (
         <div id="back-top">
             <div onClick={() => { scrollToTop() }}>

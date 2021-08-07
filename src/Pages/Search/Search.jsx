@@ -3,6 +3,7 @@ import "./style.css";
 import "animate.css";
 import { useParams } from 'react-router-dom'
 import ArtistCards from '../../Components/ArtistCards/ArtistCards';
+import { scrollToTop } from '../../Helpers';
 const axios = require('axios').default;
 
 function Search() {
@@ -12,6 +13,7 @@ function Search() {
     const [artists, setArtists] = useState(null);
 
     useEffect(() => {
+        scrollToTop();
         if (term && term.trim() !== '') {
             setLoading(true);
             axios.get('http://localhost:8080/search/' + term).then(res => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import "animate.css";
 import RushWords from '../../images/rush.png';
@@ -7,6 +7,7 @@ import CardiBWords from '../../images/cardi-b.png';
 import ArtistCards from '../../Components/ArtistCards/ArtistCards';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import { scrollToTop } from '../../Helpers';
 
 function Home() {
 
@@ -20,15 +21,10 @@ function Home() {
         { name: 'Pink Floyd', slug: "pink-floyd", cover: 'https://images.genius.com/6b5c50912d99c3cf0eabfec5f427c452.1000x1000x1.jpg' }
     ]
 
+    useEffect(()=>{scrollToTop()},[]);
+
     function setFieldSearchTerm(term) {
         setFieldTerm(term.trim());
-    }
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
     }
 
     function submitFieldSearch() {
@@ -38,7 +34,7 @@ function Home() {
     const ExampleArtist = (props) => {
         return (
             <div className="example-artist">
-                <Link to={"/" + props.slug} onClick={() => { scrollToTop() }}>
+                <Link to={"/" + props.slug}>
                     <div className="example-white"></div>
                     <img src={props.img} />
                     <div className="example-footer">Ver mais {'>'}&nbsp;</div>

@@ -18,6 +18,10 @@
     box-shadow: 3px 3px 3px lightgrey;
 }
 
+.rough-shadow{
+    box-shadow: 3px 3px lightgrey;
+}
+
 h2{
     margin-bottom: 7px;
 }

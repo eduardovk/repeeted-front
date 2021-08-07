@@ -73,21 +73,21 @@ function SearchBar() {
             <div className="fake-bar">
                 <div className="genres-container">
                     <div className="main-genres" style={moreGenres ? ({ display: "none" }) : ({ display: "flex" })}>
-                        <Link to="/genres/pop"><div className="genre shadow">pop</div></Link>
-                        <Link to="/genres/rock"><div className="genre shadow">rock</div></Link>
-                        <Link to="/genres/hip-hop"><div className="genre shadow">hip hop</div></Link>
-                        <Link to="/genres/country"><div className="genre shadow">country</div></Link>
-                        <Link to="/genres/trap"><div className="genre g0 shadow">trap</div></Link>
-                        <Link to="/genres/metal"><div className="genre g1 shadow">metal</div></Link>
-                        <Link to="/genres/rap"><div className="genre g2 shadow">rap</div></Link>
-                        <Link to="/genres/electropop"><div className="genre g3 shadow">electropop</div></Link>
+                        <Link to="/genre/pop"><div className="genre shadow">pop</div></Link>
+                        <Link to="/genre/rock"><div className="genre shadow">rock</div></Link>
+                        <Link to="/genre/hip-hop"><div className="genre shadow">hip hop</div></Link>
+                        <Link to="/genre/country"><div className="genre shadow">country</div></Link>
+                        <Link to="/genre/trap"><div className="genre g0 shadow">trap</div></Link>
+                        <Link to="/genre/metal"><div className="genre g1 shadow">metal</div></Link>
+                        <Link to="/genre/rap"><div className="genre g2 shadow">rap</div></Link>
+                        <Link to="/genre/electropop"><div className="genre g3 shadow">electropop</div></Link>
                         <div id="show-genres" onClick={() => { setMoreGenres(true) }}><IoMdArrowDropdown size="1.2em" /></div>
                     </div>
                     <div className="more-genres" style={moreGenres ? ({ display: "flex" }) : ({ display: "none" })}>
                         <div id="hide-genres" onClick={() => { setMoreGenres(false) }}><IoMdArrowDropup size="1.2em" /></div>
                         {genres && (<>
                             {genres.map((genre, idx) => (
-                                <Link key={idx} className="no-decor" to={"/genres/" + genre.slug}>
+                                <Link key={idx} className="no-decor" to={"/genre/" + genre.slug} onClick={() => { setMoreGenres(false) }}>
                                     <div className="genre shadow">{genre.genre}</div>
                                 </Link>
                             ))}

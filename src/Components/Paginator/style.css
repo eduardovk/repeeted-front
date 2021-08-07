@@ -1,0 +1,19 @@
+.paginator{
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.previous-page, .next-page{
+    display: inline-block;
+}
+
+.paginator a{
+    color: #1c395c;
+    transition: 0.2s;
+}
+.paginator a:hover{
+    color: #0a62d0;
+}
+

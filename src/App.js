@@ -13,16 +13,11 @@ import {
 import Home from './Pages/Home/Home';
 import Words from './Pages/Words/Words';
 import Search from './Pages/Search/Search';
+import Genres from './Pages/Genres/Genres';
 import { AiOutlineToTop } from 'react-icons/ai';
+import GenreArtists from './Pages/GenreArtists/GenreArtists';
 
 function App() {
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
 
   return (
     <div className="App">
@@ -37,6 +32,14 @@ function App() {
                 <Home {...props} key={Math.random()} />
               )}
             />
+            <Route path="/genres/">
+              <Genres />
+            </Route>
+            <Route
+              exact path='/genre/:slug/:page?'
+              render={(props) => (
+                <GenreArtists {...props} key={Math.random()} />
+              )} />
             <Route path="/search/:term">
               <Search />
             </Route>

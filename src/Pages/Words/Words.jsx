@@ -6,6 +6,7 @@ import Tags from '../../Components/Tags';
 import Accordion from '../../Components/Accordion';
 import ArtistCards from '../../Components/ArtistCards';
 import PageLoading from "../../Components/PageLoading";
+import { scrollToTop } from '../../Helpers';
 const axios = require('axios').default;
 
 function Words() {
@@ -17,6 +18,7 @@ function Words() {
     const [songsData, setSongsData] = useState(null);
 
     useEffect(() => {
+        scrollToTop();
         if (slug.trim()) {
             setLoading(true);
             axios.get('http://localhost:8080/words/' + slug).then(res => {

@@ -1,0 +1,48 @@
+#all-genres-container h2{
+    margin-left: 15px;
+}
+
+#all-genres-list{
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    background-color: rgb(255, 255, 255);
+}
+
+#all-genres-list a{
+    text-decoration: none;
+}
+
+#all-genres-list span{
+    padding: 0px 5px 2px 5px;
+    margin: 5px !important;
+    transition: 0.2s;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #eee;
+    color: #777;
+}
+
+#all-genres-list span:hover{
+    background-color: #777;
+    color: white;
+}
+
+@media (min-width: 400px){
+    #all-genres-list{
+        padding: 20px 30px;
+    }
+    #all-genres-container h2{
+        margin-left: 40px;
+    }
+}
+
+@media (min-width: 540px){
+    #all-genres-list{
+        margin: 20px 40px 20px 40px;
+    }
+}

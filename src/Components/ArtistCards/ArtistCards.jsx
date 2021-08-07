@@ -9,7 +9,7 @@ function ArtistCards(props) {
     const ArtistCard = (props) => {
         return (
             <div className="artist-card">
-                <Link to={"/" + props.slug} onClick={() => { scrollToTop() }}>
+                <Link to={"/" + props.slug}>
                     <div className="artist-bg" style={{ backgroundImage: "url(" + props.img + ")", backgroundSize: "cover" }}></div>
                     <div className="card-white"></div>
                     <img src={Blank} />
@@ -17,13 +17,6 @@ function ArtistCards(props) {
                 </Link>
             </div>
         );
-    }
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
     }
 
     return (

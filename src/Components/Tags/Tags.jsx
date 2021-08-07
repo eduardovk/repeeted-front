@@ -8,19 +8,12 @@ import { Link } from "react-router-dom";
 
 function Tags(genres) {
 
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }
-
     return (
         <div className="tags-container">
             <h3>Tags: </h3>
             {genres.genres.length > 0 && (<>
                 {genres.genres.map((genre,idx) => (
-                    <Link key={idx} className="no-decor" to={"/genres/" + genre.slug} onClick={() => { scrollToTop() }}>
+                    <Link key={idx} className="no-decor" to={"/genre/" + genre.slug} >
                         <span className="shadow">{genre.name}</span>
                     </Link>
                 ))}
