@@ -20,7 +20,6 @@ function WordCloud({ words }) {
 
     useEffect(() => {
         setTimeout(function () {
-            console.log(words);
             setShowWordCloud(true);
         }, 1500);
     }, []);

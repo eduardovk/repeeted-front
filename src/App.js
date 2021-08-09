@@ -46,9 +46,11 @@ function App() {
             <Route path="/search">
               <Search />
             </Route>
-            <Route path="/:slug">
-              <Words />
-            </Route>
+            <Route
+              exact path='/:slug'
+              render={(props) => (
+                <Words {...props} key={Math.random()} />
+              )} />
           </Switch>
         </div>
         <BackToTop />

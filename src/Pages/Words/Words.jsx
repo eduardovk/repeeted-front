@@ -12,7 +12,9 @@ const axios = require('axios').default;
 function Words() {
     const { slug } = useParams();
     const [loading, setLoading] = useState(true);
+    const [loadingRelated, setLoadingRelated] = useState(true);
     const [artist, setArtist] = useState(null);
+    const [relatedArtists, setRelatedArtists] = useState(null);
     const [songs, setSongs] = useState(null);
     const [genres, setGenres] = useState([]);
     const [songsData, setSongsData] = useState(null);
@@ -21,6 +23,7 @@ function Words() {
         scrollToTop();
         if (slug.trim()) {
             setLoading(true);
+            setLoadingRelated(true);
             axios.get('http://localhost:8080/words/' + slug).then(res => {
                 if (res.data && res.data.artist) {
                     setArtist(res.data.artist);
@@ -33,6 +36,14 @@ function Words() {
                         total_words: totalWords
                     });
                     setLoading(false);
+                    const related = res.data.artist.related;
+                    if (related && related != '0') {
+                        axios.get('http://localhost:8080/search/related/' + related).then(resp => {
+                            if (resp.data && resp.data.response)
+                                setRelatedArtists(resp.data.response);
+                        }).catch(e => console.log(e));
+                    }
+                    setLoadingRelated(false);
                 }
             }).catch(e => console.log(e));
         }
@@ -49,7 +60,7 @@ function Words() {
                         <Tags genres={genres} />
                         <Accordion total_songs={songsData.total_songs} songs={songs} />
                     </div>
-                    <ArtistCards title="Artistas relacionados" />
+                    <ArtistCards title="Artistas relacionados" loading={loadingRelated} artists={relatedArtists} />
                 </div>
             )}
 

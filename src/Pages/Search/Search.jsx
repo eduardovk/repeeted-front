@@ -18,7 +18,6 @@ function Search() {
             setLoading(true);
             axios.get('http://localhost:8080/search/' + term).then(res => {
                 if (res.data && res.data.response) {
-                    console.log(res.data.response)
                     setArtists(res.data.response);
                     setLoading(false);
                 }
