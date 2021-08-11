@@ -18,10 +18,19 @@ function Home() {
         { name: 'Billie Eilish', slug: "billie-eilish", cover: 'https://images.genius.com/1aa6c04aad3652556046bb3aabe96498.900x900x1.jpg' },
         { name: 'Lana Del Rey', slug: "lana-del-rey", cover: 'https://images.genius.com/a90b579f172cd6ff536fc094109179a0.465x465x1.png' },
         { name: 'The Weeknd', slug: "the-weeknd", cover: 'https://images.genius.com/f0813e600d43b8b43c94e8ba1dde880a.640x640x1.png' },
-        { name: 'Pink Floyd', slug: "pink-floyd", cover: 'https://images.genius.com/6b5c50912d99c3cf0eabfec5f427c452.1000x1000x1.jpg' }
+        { name: 'Pink Floyd', slug: "pink-floyd", cover: 'https://images.genius.com/6b5c50912d99c3cf0eabfec5f427c452.1000x1000x1.jpg' },
+        { name: 'The Beatles', slug: "the-beatles", cover: 'https://images.genius.com/df75ede64ffcf049727bfbb01d323081.400x400x1.jpg' },
+        { name: 'Ed Sheeran', slug: "ed-sheeran", cover: 'https://images.genius.com/b501daeff73d1b17610f47a5668f690a.1000x1000x1.jpg' },
+        { name: 'Gorillaz', slug: "gorillaz", cover: 'https://images.genius.com/c9182b5ecce1ab6d22ba0eaddb635424.400x400x1.jpg' },
+        { name: 'Halsey', slug: "halsey", cover: 'https://images.genius.com/039d606853bc3c7354475fd74ce630e9.400x400x1.jpg' },
+        { name: 'The Strokes', slug: "the-strokes", cover: 'https://images.genius.com/b5237c13de1a05f92ca6327d854cbfc8.1000x1000x1.jpg' },
+        { name: 'Black Eyed Peas', slug: "black-eyed-peas", cover: 'https://images.genius.com/67d990fb2d231bf7e3e5c6555cceb379.1000x1000x1.jpg' },
+        { name: 'Fetty Wap', slug: "fetty-wap", cover: 'https://images.genius.com/2db490b018326cc845af1b3dbb102cde.834x834x1.jpg' },
+        { name: 'Ariana Grande', slug: "ariana-grande", cover: 'https://images.genius.com/d36a47955ac0ddb12748c5e7c2bd4b4b.640x640x1.jpg' },
+        { name: 'Coldplay', slug: "coldplay", cover: 'https://images.genius.com/e4f988f1ee26618c5dd41b59b8ff2b43.1000x1000x1.jpg' }
     ]
 
-    useEffect(()=>{scrollToTop()},[]);
+    useEffect(() => { scrollToTop() }, []);
 
     function setFieldSearchTerm(term) {
         setFieldTerm(term.trim());
@@ -53,7 +62,7 @@ function Home() {
                 </div>
                 <div className="amounts-info">
                     <div>
-                        <h2 className="animate__animated animate__flipInX">12.523</h2>
+                        <h2 className="animate__animated animate__flipInX">22.119</h2>
                         <h3>ARTISTAS ANALISADOS</h3>
                     </div>
                     <div>

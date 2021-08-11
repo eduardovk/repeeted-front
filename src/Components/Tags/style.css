@@ -58,6 +58,54 @@
     color: rgb(218, 114, 73);
 }
 
+#report-form{
+    max-width: 400px;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+}
+
+#report-form input,textarea{
+    margin: 5px auto;
+    width: 100%;
+    border: none;
+    font: 1.3em;
+    font-weight: 700;
+}
+
+#report-form input{
+    height: 25px;
+}
+
+.report-form-btn, .report-form-btn-disabled{
+    min-width: 100%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 5px 0;
+    font-weight: 700;
+    border: none;
+}
+
+.report-form-btn{
+    background-color: #eee;
+    color: #777;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.report-form-btn:hover{
+    color: white;
+    background-color: #777;
+}
+
+.report-form-btn-disabled{
+    background-color: rgb(168, 168, 168);
+    color: rgb(54, 54, 54);
+}
+
+.customModal {
+    background: #ffc145 !important;
+}
+
 @media (min-width: 570px) {
     .share-report{
         flex-basis: 15%;
