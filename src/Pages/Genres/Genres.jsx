@@ -25,7 +25,7 @@ function Genres() {
                 {genres.length > 0 ? (<>
                     {genres.map((genre, idx) => (
                         <Link key={idx} className="no-decor" to={"/genre/" + genre.slug}>
-                            <span className="rough-shadow yellow-tag">{genre.genre} ({genre.count})</span>
+                            <span className="rough-shadow">{genre.genre} ({genre.count})</span>
                         </Link>
                     ))}
                 </>) : (<PageLoading />)}

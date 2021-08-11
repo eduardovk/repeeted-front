@@ -10,6 +10,7 @@ function SearchBar() {
     const [term, setTerm] = useState("");
     const [moreGenres, setMoreGenres] = useState(false);
     const [genres, setGenres] = useState(null);
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
     function setSearchTerm(term) {
         setTerm(term.trim());
@@ -31,33 +32,10 @@ function SearchBar() {
             <form id="search-form" action={"/search/" + term}>
                 <div className="search-banner">
                     <div className="alphabet">
-                        <a href="/">#</a>
-                        <a href="/">A</a>
-                        <a href="/">B</a>
-                        <a href="/">C</a>
-                        <a href="/">D</a>
-                        <a href="/">E</a>
-                        <a href="/">F</a>
-                        <a href="/">G</a>
-                        <a href="/">H</a>
-                        <a href="/">I</a>
-                        <a href="/">J</a>
-                        <a href="/">K</a>
-                        <a href="/">L</a>
-                        <a href="/">M</a>
-                        <a href="/">N</a>
-                        <a href="/">O</a>
-                        <a href="/">P</a>
-                        <a href="/">Q</a>
-                        <a href="/">R</a>
-                        <a href="/">S</a>
-                        <a href="/">T</a>
-                        <a href="/">U</a>
-                        <a href="/">V</a>
-                        <a href="/">W</a>
-                        <a href="/">X</a>
-                        <a href="/">Y</a>
-                        <a href="/">Z</a>
+                        <Link to={`/letters/_`}>#</Link>
+                        {letters.map((letter, idx) => (
+                            <Link key={idx} to={`/letters/${letter.toLowerCase()}`}>{letter}</Link>
+                        ))}
                     </div>
                     <div className="search-container">
                         <div className="input-container">

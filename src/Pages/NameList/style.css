@@ -1,0 +1,45 @@
+
+#text-columns{
+    column-count: 1;
+    text-align: center;
+}
+
+#text-columns a{
+    text-decoration: none;
+    display: block;
+}
+
+#text-columns span{
+    padding: 0px 5px 2px 5px;
+    margin: 5px !important;
+    transition: 0.2s;
+    cursor: pointer;
+    display: inline-block;
+    flex-basis: 100%;
+    background-color: #eee;
+    color: #777;
+}
+
+#text-columns span:hover{
+    background-color: #777;
+    color: white;
+}
+
+@media(min-width: 360px){
+    #text-columns{
+        column-count: 2;
+        text-align: left;
+    }
+}
+
+@media(min-width: 495px){
+    #text-columns{
+        column-count: 3;
+    }
+}
+
+@media(min-width: 710px){
+    #text-columns{
+        column-count: 4;
+    }
+}

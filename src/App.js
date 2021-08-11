@@ -16,6 +16,7 @@ import Search from './Pages/Search/Search';
 import Genres from './Pages/Genres/Genres';
 import { AiOutlineToTop } from 'react-icons/ai';
 import GenreArtists from './Pages/GenreArtists/GenreArtists';
+import NameList from './Pages/NameList/NameList';
 
 function App() {
 
@@ -35,6 +36,11 @@ function App() {
             <Route path="/genres/">
               <Genres />
             </Route>
+            <Route
+              exact path='/letters/:letter/:page?'
+              render={(props) => (
+                <NameList {...props} key={Math.random()} />
+              )} />
             <Route
               exact path='/genre/:slug/:page?'
               render={(props) => (
