@@ -106,6 +106,12 @@
     background: #ffc145 !important;
 }
 
+#captcha-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 @media (min-width: 570px) {
     .share-report{
         flex-basis: 15%;
