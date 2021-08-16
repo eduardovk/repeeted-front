@@ -1,7 +1,63 @@
 footer{
-    background-color: #0a62d0;
+    background-color: #0c315e;
     color: white;
     width: 100%;
     min-height: 100px;
     margin: 0;
+}
+
+#footer-icons{
+    margin: 0 auto;
+    padding: 15px 0 5px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#footer-icons span{
+    margin: 5px;
+    color: #b0c5d8;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#footer-icons span:hover{
+    color: #ffc145;
+}
+
+#footer-links{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    font-family: "Oswald";
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+#footer-links span{
+    margin: 15px;
+}
+
+#footer-links a{
+    text-decoration: none !important;
+    transition: 0.2s;
+}
+
+#footer-links a:visited{
+    color: #95c5ff !important;
+}
+
+#footer-links a:hover{
+    text-decoration: none !important;
+    color: #ffc145 !important;
+}
+
+#footer-donate{
+    padding-top: 10px;
+    width: 100%;
+    background-color: #0a62d0;
+    text-align: center;
+}
+
+#footer-donate form{
+    margin: 10px;
 }

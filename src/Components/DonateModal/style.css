@@ -1,0 +1,37 @@
+.customModal-donate {
+    background: #0e2138 !important;
+    color: white;
+}
+
+#modal-donate{
+    padding-top: 10px;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#modal-donate-body{
+    margin: 0 15px;
+}
+
+#donate-text{
+    margin: 0 auto 15px auto;
+    display: block;
+    text-align: center;
+}
+
+#donate-text span{
+    font-size: .8em;
+    display: block;
+    text-align: left;
+}
+
+#donate-section{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+#modal-donate form{
+    margin: 10px;
+}

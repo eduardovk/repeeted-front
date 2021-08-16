@@ -12,6 +12,10 @@ import { scrollToTop } from '../../Helpers';
 function Home() {
 
     const [fieldTerm, setFieldTerm] = useState("");
+    
+    const total = {words: 286721199, artists: 22119, songs: 985119};
+    Object.keys(total).map(n=>{total[n] = total[n].toLocaleString('pt-BR')});
+
     const artists = [
         { name: 'Drake', slug: "drake", cover: 'https://images.genius.com/c6b5142a09ff5bd361d0f42a55692edc.1000x1000x1.jpg' },
         { name: 'Eminem', slug: "eminem", cover: 'https://images.genius.com/c674178296f3d65792a66f851fbc62fc.900x900x1.png' },
@@ -57,16 +61,16 @@ function Home() {
             <div id="numbers-info">
                 <h1>Descubra as palavras mais repetidas por seu artista/banda favorito!</h1>
                 <div id="total-words">
-                    <h2 className="animate__animated animate__flipInX">5.674.831</h2>
+                    <h2 className="animate__animated animate__flipInX">{total.words}</h2>
                     <h3>PALAVRAS ANALISADAS</h3>
                 </div>
                 <div className="amounts-info">
                     <div>
-                        <h2 className="animate__animated animate__flipInX">22.119</h2>
+                        <h2 className="animate__animated animate__flipInX">{total.artists}</h2>
                         <h3>ARTISTAS ANALISADOS</h3>
                     </div>
                     <div>
-                        <h2 className="animate__animated animate__flipInX">1.685.523</h2>
+                        <h2 className="animate__animated animate__flipInX">{total.songs}</h2>
                         <h3>MÚSICAS ANALISADAS</h3>
                     </div>
                 </div>

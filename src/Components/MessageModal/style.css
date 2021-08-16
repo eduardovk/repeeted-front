@@ -42,8 +42,13 @@
     color: rgb(54, 54, 54);
 }
 
-.customModal {
+.customModal-message {
     background: #ffc145 !important;
+    color: #5a4310;
+}
+
+.customModal-message hr{
+    border-style:solid;
 }
 
 #captcha-container{

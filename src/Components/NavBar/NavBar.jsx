@@ -3,11 +3,13 @@ import "./style.css";
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from "react-router-dom";
 import MessageModal from '../MessageModal/MessageModal';
+import DonateModal from '../DonateModal';
 
 function NavBar() {
 
     const [showMenu, setShowMenu] = useState(false);
-    const [openModal, setOpenModal] = useState(false);
+    const [openMsgModal, setOpenMsgModal] = useState(false);
+    const [openDonateModal, setOpenDonateModal] = useState(false);
 
     return (
         <nav>
@@ -17,8 +19,8 @@ function NavBar() {
                     <Link to="/"><li>Home</li></Link>
                     <li>Sobre</li>
                     <li>Como Funciona</li>
-                    <li onClick={() => {setOpenModal(true)}}>Contato</li>
-                    <li style={{ color: "#ffc145" }}>Doar</li>
+                    <li onClick={() => {setOpenMsgModal(true)}}>Contato</li>
+                    <li style={{ color: "#ffc145" }} onClick={() => {setOpenDonateModal(true)}}>Doar</li>
                 </ul>
                 <div className="menu-icon">
                     <span onClick={() => setShowMenu(!showMenu)}><GiHamburgerMenu size="1.8em" /></span>
@@ -27,12 +29,13 @@ function NavBar() {
                     <span>Home</span>
                     <span>Sobre</span>
                     <span>Como Funciona</span>
-                    <span onClick={() => {setOpenModal(true)}}>Contato</span>
-                    <span style={{ color: "#ffc145" }}>Doar</span>
+                    <span onClick={() => {setOpenMsgModal(true)}}>Contato</span>
+                    <span style={{ color: "#ffc145" }} onClick={() => {setOpenDonateModal(true)}}>Doar</span>
                 </div>
             </div>
             <MessageModal id_genius={null} modalTitle="Formulário de contato" 
-            msgPlaceholder="Escreva sua mensagem de contato" open={openModal} setOpen={setOpenModal} />
+            msgPlaceholder="Escreva sua mensagem de contato" open={openMsgModal} setOpen={setOpenMsgModal} />
+            <DonateModal open={openDonateModal} setOpen={setOpenDonateModal} />
         </nav>
     );
 }

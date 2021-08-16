@@ -26,7 +26,7 @@
 
 #total-words h2{
     text-align: center;
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 700;
     color: #1c395c;
     font-family: "Oswald";
@@ -156,10 +156,19 @@
     color: #1c395c
 }
 
-@media (min-width: 416px){
+@media(min-width: 330px){
+    #total-words h2{
+        font-size: 4em;
+    }
+}
+
+@media(min-width: 480px){
     #total-words h2{
         font-size: 6em;
     }
+}
+
+@media (min-width: 416px){
     #total-words h3{
         font-size: 1.5em;
     }

@@ -3,9 +3,10 @@ import "./style.css";
 import { Modal } from 'react-responsive-modal';
 import MicroLoading from '../../images/micro-loading.svg';
 import ReCAPTCHA from "react-google-recaptcha";
+import { RiCloseLine } from 'react-icons/ri';
 const axios = require('axios').default;
 
-function MessageModal({id_genius, modalTitle, msgPlaceholder, open, setOpen}) {
+function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) {
 
     const [lockForm, setLockForm] = useState(false);
     const [name, setName] = useState('');
@@ -15,12 +16,16 @@ function MessageModal({id_genius, modalTitle, msgPlaceholder, open, setOpen}) {
 
     const recaptchaRef = useRef();
 
+    const closeIcon = (
+        <span style={{ color: "#5a4310" }}><RiCloseLine size={30} /></span>
+    );
+
     function sendMessage() {
         setLockForm(true);
         const recaptchaValue = recaptchaRef.current.getValue();
         if (recaptchaValue) {
             const url = 'http://localhost:8080/messages';
-            axios.post(url, { name: name, email: email, msg: msg, id_genius:id_genius, captcha: recaptchaValue })
+            axios.post(url, { name: name, email: email, msg: msg, id_genius: id_genius, captcha: recaptchaValue })
                 .then(r => {
                     if (r.status === 201) alert('Mensagem enviada com sucesso!');
                     onCloseModal();
@@ -35,13 +40,13 @@ function MessageModal({id_genius, modalTitle, msgPlaceholder, open, setOpen}) {
 
     return (
         <Modal open={open} onClose={onCloseModal} center classNames={{
-            modal: 'customModal',
-        }}>
+            modal: 'customModal-message',
+        }} closeIcon={closeIcon}>
             <form action="" id="report-form" onSubmit={(event) => {
                 event.preventDefault();
                 sendMessage();
             }}>
-                <h2>{modalTitle}</h2>
+                <h2>{modalTitle}</h2><hr></hr><br />
                 <input type="text" placeholder="Nome" required disabled={lockForm} onChange={(e) => setName(e.target.value)} />
                 <input type="email" placeholder="E-mail" required disabled={lockForm} onChange={(e) => setEmail(e.target.value)} />
                 <textarea name="" id="" cols="30" rows="5" placeholder={msgPlaceholder}
