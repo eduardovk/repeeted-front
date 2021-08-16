@@ -70,14 +70,14 @@ nav{
     transition: 0.2s;
 }
 
-.navbar-list li:hover{
+.navbar-list li:hover, .mobile-nav span:hover a{
     color: #0c315e !important;
 }
 
-.navbar-list a{
+.navbar-list a, .mobile-nav a{
     text-decoration: none !important;
 }
-.navbar-list a:visited{
+.navbar-list a:visited, .mobile-nav a:visited{
     color: #95c5ff !important;
 }
 

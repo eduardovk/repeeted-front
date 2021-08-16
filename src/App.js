@@ -17,6 +17,8 @@ import Genres from './Pages/Genres/Genres';
 import { AiOutlineToTop } from 'react-icons/ai';
 import GenreArtists from './Pages/GenreArtists/GenreArtists';
 import NameList from './Pages/NameList/NameList';
+import HowItWorks from './Pages/HowItWorks/HowItWorks';
+import About from './Pages/About/About';
 
 function App() {
 
@@ -51,6 +53,9 @@ function App() {
             </Route>
             <Route path="/search">
               <Search />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
             <Route
               exact path='/:slug'

@@ -17,24 +17,24 @@ function NavBar() {
                 <div className="navbar-logo">Logo</div>
                 <ul className="navbar-list">
                     <Link to="/"><li>Home</li></Link>
-                    <li>Sobre</li>
+                    <Link to="/about"><li>Sobre</li></Link>
                     <li>Como Funciona</li>
-                    <li onClick={() => {setOpenMsgModal(true)}}>Contato</li>
-                    <li style={{ color: "#ffc145" }} onClick={() => {setOpenDonateModal(true)}}>Doar</li>
+                    <li onClick={() => { setOpenMsgModal(true) }}>Contato</li>
+                    <li style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>Doar</li>
                 </ul>
                 <div className="menu-icon">
                     <span onClick={() => setShowMenu(!showMenu)}><GiHamburgerMenu size="1.8em" /></span>
                 </div>
                 <div className="mobile-nav" style={showMenu ? ({ display: "flex" }) : ({ display: "none" })}>
-                    <span>Home</span>
-                    <span>Sobre</span>
+                    <span><Link to="/">Home</Link></span>
+                    <span><Link to="/about">Sobre</Link></span>
                     <span>Como Funciona</span>
-                    <span onClick={() => {setOpenMsgModal(true)}}>Contato</span>
-                    <span style={{ color: "#ffc145" }} onClick={() => {setOpenDonateModal(true)}}>Doar</span>
+                    <span onClick={() => { setOpenMsgModal(true) }}>Contato</span>
+                    <span style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>Doar</span>
                 </div>
             </div>
-            <MessageModal id_genius={null} modalTitle="Formulário de contato" 
-            msgPlaceholder="Escreva sua mensagem de contato" open={openMsgModal} setOpen={setOpenMsgModal} />
+            <MessageModal id_genius={null} modalTitle="Formulário de contato"
+                msgPlaceholder="Escreva sua mensagem de contato" open={openMsgModal} setOpen={setOpenMsgModal} />
             <DonateModal open={openDonateModal} setOpen={setOpenDonateModal} />
         </nav>
     );

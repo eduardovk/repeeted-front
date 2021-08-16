@@ -17,7 +17,7 @@ function ArtistInfo({ artist, total_songs, total_words }) {
                         <span><span className="a-total">{total_songs}</span>Músicas analisadas</span>
                     </div>
                     <div className="words-analyzed">
-                        <span><span className="a-total">{total_words}</span>Palavras analisadas</span>
+                        <span><span className="a-total">{total_words.toLocaleString('pt-BR')}</span>Palavras analisadas</span>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,63 @@
+#about-container{
+    color: #2c2a2b;
+}
+
+#author-container{
+    max-width: 300px;
+    margin: 15px auto 50px auto;
+    padding: 15px 10px 15px 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+#author-pic{
+    border-radius: 10px;
+    max-width: 150px;
+    flex-basis: 100%;
+}
+
+#author-info{
+    text-align: center;
+    flex-basis: 100%;
+}
+
+#author-info p{
+    margin: 5px 0;
+}
+
+#about-text, #about-donate{
+    text-align: justify;
+}
+
+#about-text p{
+    font-size: 1.1em;
+}
+
+#about-donate{
+    margin-top: 50px;
+}
+
+#about-donate-btn{
+    display: flex;
+    justify-content: center;
+}
+
+@media(min-width: 490px){
+    #author-container{
+        max-width: 600px;
+        justify-content: start;
+        padding: 0;
+    }
+    #author-pic{
+        flex-basis: auto;
+    }
+    #author-info{
+        text-align: left;
+        flex-basis: auto;
+    }
+}
