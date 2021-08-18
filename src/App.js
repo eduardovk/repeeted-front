@@ -57,6 +57,9 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
+            <Route path="/how-it-works">
+              <HowItWorks />
+            </Route>
             <Route
               exact path='/:slug'
               render={(props) => (

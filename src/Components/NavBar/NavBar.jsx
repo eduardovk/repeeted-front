@@ -18,7 +18,7 @@ function NavBar() {
                 <ul className="navbar-list">
                     <Link to="/"><li>Home</li></Link>
                     <Link to="/about"><li>Sobre</li></Link>
-                    <li>Como Funciona</li>
+                    <Link to="/how-it-works"><li>Como Funciona</li></Link>
                     <li onClick={() => { setOpenMsgModal(true) }}>Contato</li>
                     <li style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>Doar</li>
                 </ul>
@@ -28,7 +28,7 @@ function NavBar() {
                 <div className="mobile-nav" style={showMenu ? ({ display: "flex" }) : ({ display: "none" })}>
                     <span><Link to="/">Home</Link></span>
                     <span><Link to="/about">Sobre</Link></span>
-                    <span>Como Funciona</span>
+                    <span><Link to="/how-it-works">Como Funciona</Link></span>
                     <span onClick={() => { setOpenMsgModal(true) }}>Contato</span>
                     <span style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>Doar</span>
                 </div>
