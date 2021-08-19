@@ -6,10 +6,12 @@ import 'tippy.js/dist/tippy.css'; // optional
 import Tippy from '@tippyjs/react';
 import { Link } from "react-router-dom";
 import MessageModal from '../MessageModal/MessageModal';
+import ShareModal from '../ShareModal';
 
-function Tags({ id_genius, genres }) {
+function Tags({words, name, id_genius, genres }) {
 
-    const [openModal, setOpenModal] = useState(false);
+    const [openMsgModal, setOpenMsgModal] = useState(false);
+    const [openShareModal, setOpenShareModal] = useState(false);
 
     return (
         <>
@@ -23,15 +25,20 @@ function Tags({ id_genius, genres }) {
                     ))}
                 </>)}
                 <div className="share-report">
-                    <Tippy content="Compartilhar Resultado"><div><GiShare id="share-btn" size="2em" /></div></Tippy>
+                    <Tippy content="Compartilhar Resultado">
+                        <div>
+                            <GiShare id="share-btn" size="2em" onClick={() => { setOpenShareModal(true) }} />
+                        </div>
+                    </Tippy>
                     <Tippy content="Reportar Erro">
                         <div>
-                            <FiAlertTriangle onClick={() => { setOpenModal(true) }} id="report-btn" size="1.8em" />
+                            <FiAlertTriangle onClick={() => { setOpenMsgModal(true) }} id="report-btn" size="1.8em" />
                         </div>
                     </Tippy>
                 </div>
+                <ShareModal words={words} name={name} open={openShareModal} setOpen={setOpenShareModal} />
                 <MessageModal id_genius={id_genius} modalTitle="Reportar erro"
-                    msgPlaceholder="Descreva o erro encontrado" open={openModal} setOpen={setOpenModal} />
+                    msgPlaceholder="Descreva o erro encontrado" open={openMsgModal} setOpen={setOpenMsgModal} />
             </div>
         </>
     );

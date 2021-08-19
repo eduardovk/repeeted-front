@@ -57,7 +57,7 @@ function Words() {
                     <h2>Palavras mais repetidas por {artist.name}</h2>
                     <div className="shadow animate__animated animate__backInUp">
                         <WordCloud words={artist.words} />
-                        <Tags id_genius={artist.id_genius} genres={genres} />
+                        <Tags words={artist.words} name={artist.name} id_genius={artist.id_genius} genres={genres} />
                         <Accordion total_songs={songsData.total_songs} songs={songs} />
                     </div>
                     <ArtistCards title="Artistas relacionados" loading={loadingRelated} artists={relatedArtists} />
