@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import "./style.css";
 import { AiFillTwitterCircle, AiFillInstagram, AiFillGithub } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { i18n } from '../../translate/i18n';
+import MessageModal from '../MessageModal/MessageModal';
+
 function Footer() {
 
     const [showMenu, setShowMenu] = useState(false);
+    const [openMsgModal, setOpenMsgModal] = useState(false);
 
     return (
         <footer>
@@ -15,13 +19,13 @@ function Footer() {
             </div>
             <div id="footer-links">
                 <Link to="/"><span>Home</span></Link>
-                <Link to="/about"><span>Sobre</span></Link>
-                <Link to="/how-it-works"><span>Como Funciona</span></Link>
-                <Link to="/"><span>Contato</span></Link>
+                <Link to="/about"><span>{i18n.t('nav.about')}</span></Link>
+                <Link to="/how-it-works"><span>{i18n.t('nav.howItWorks')}</span></Link>
+                <div><span onClick={() => { setOpenMsgModal(true) }}>{i18n.t('nav.contact')}</span></div>
             </div>
             <div id="footer-donate">
-                <span style={{fontSize: '.8em'}}>Este site <b>não</b> exibe propagandas e nem utiliza cookies ou rastreadores!</span><br/>
-                <span>Considere fazer uma <b><span style={{color: "#ffc145"}}>doação</span></b> para me ajudar a mantê-lo no ar:</span>
+                <span style={{ fontSize: '.8em' }}>{i18n.t('footer.disclaimer1')} <b>{i18n.t('words.not')}</b> {i18n.t('footer.disclaimer2')}</span><br />
+                <span>{i18n.t('footer.donation1')} <b><span style={{ color: "#ffc145" }}>{i18n.t('words.donation')}</span></b> {i18n.t('footer.donation2')}</span>
                 <form action="https://www.paypal.com/donate" method="post" target="_top">
                     <input type="hidden" name="business" value="WYLDPSDW4YBBU" />
                     <input type="hidden" name="no_recurring" value="0" />
@@ -29,6 +33,8 @@ function Footer() {
                     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
                     <img alt="" border="0" src="https://www.paypal.com/en_BR/i/scr/pixel.gif" width="1" height="1" />
                 </form>
+                <MessageModal id_genius={null} modalTitle="Formulário de contato"
+                    msgPlaceholder="Escreva sua mensagem de contato" open={openMsgModal} setOpen={setOpenMsgModal} />
             </div>
         </footer>
     );

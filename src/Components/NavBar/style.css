@@ -76,9 +76,23 @@ nav{
 
 .navbar-list a, .mobile-nav a{
     text-decoration: none !important;
+    color: #95c5ff !important;
 }
 .navbar-list a:visited, .mobile-nav a:visited{
     color: #95c5ff !important;
+}
+
+.lang-flag{
+   margin-left: 3px;
+}
+
+.lang-btn{
+    cursor: pointer;
+}
+
+.lang-btn:hover{
+    transform: translate(-1px,-1px);
+    box-shadow: 1px 1px 2px #0d2f58;
 }
 
 @media (min-width: 550px) {

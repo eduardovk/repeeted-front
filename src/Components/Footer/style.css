@@ -35,20 +35,17 @@ footer{
 
 #footer-links span{
     margin: 15px;
-}
-
-#footer-links a{
-    text-decoration: none !important;
-    transition: 0.2s;
-}
-
-#footer-links a:visited{
     color: #95c5ff !important;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
-#footer-links a:hover{
-    text-decoration: none !important;
+#footer-links span:hover{
     color: #ffc145 !important;
+}
+
+#footer-links a, #footer-links a:visited{
+    text-decoration: none;
 }
 
 #footer-donate{
