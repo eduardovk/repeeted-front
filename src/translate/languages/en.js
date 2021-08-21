@@ -5,11 +5,15 @@ const messages = {
                 not: 'not',
                 donation: 'donation',
                 brazil: 'Brazil',
-                thankYou:'Thank you!'
+                thankYou:'Thank you!',
+                analyzedWords: 'Analyzed words',
+                analyzedSongs: 'Analyzed songs',
+                analyzedArtists: 'Analyzed artists'
             },
             buttons: {
                 paypalTitle: 'PayPal - The safer, easier way to pay online!',
-                paypalAlt: 'Donate with PayPal button'
+                paypalAlt: 'Donate with PayPal button',
+                searchBar: 'Search by artist or band'
             },
             nav: {
                 about: 'About',
@@ -35,6 +39,14 @@ const messages = {
                 howParagraph: 'If you want to know more about how this application works, check the page',
                 donation1: 'This website neither displays advertisements nor sells products. So please consider making a',
                 donation2: 'to help me keep it running by clicking the button below.',
+            },
+            genres:{
+                allGenres: 'All genres'
+            },
+            home:{
+                seeMore: 'See more >',
+                discover: 'Discover the most repeated words by your favorite artist/band!',
+                popular: 'Popular'
             }
         }
     }

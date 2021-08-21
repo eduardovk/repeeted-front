@@ -5,11 +5,15 @@ const messages = {
                 not: 'não',
                 donation: 'doação',
                 brazil: 'Brasil',
-                thankYou:'Muito obrigado!'
+                thankYou:'Muito obrigado!',
+                analyzedWords: 'Palavras analisadas',
+                analyzedSongs: 'Músicas analisadas',
+                analyzedArtists: 'Artistas analisados'
             },
             buttons: {
                 paypalTitle: 'PayPal - A maneira mais segura e fácil de fazer pagamentos online!',
-                paypalAlt: 'Doar com o botão Paypal'
+                paypalAlt: 'Doar com o botão Paypal',
+                searchBar: 'Procure por artista ou banda'
             },
             nav: {
                 about: 'Sobre',
@@ -35,6 +39,14 @@ const messages = {
                 howParagraph: 'Se você deseja saber mais sobre o funcionamento desta aplicação, confira a página',
                 donation1: 'Este site não exibe propagandas nem comercializa produtos. Portanto, considere fazer uma',
                 donation2: 'para me ajudar a mantê-lo no ar, clicando no botão abaixo.',
+            },
+            genres:{
+                allGenres: 'Todos os gêneros',
+            },
+            home:{
+                seeMore: 'Ver mais >',
+                discover: 'Descubra as palavras mais repetidas por seu artista/banda favorito!',
+                popular: 'Populares'
             }
         }
     }

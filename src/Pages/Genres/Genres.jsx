@@ -4,6 +4,7 @@ import "animate.css";
 import { Link } from "react-router-dom";
 import PageLoading from "../../Components/PageLoading";
 import { scrollToTop } from '../../Helpers';
+import { i18n } from '../../translate/i18n';
 const axios = require('axios').default;
 
 function Genres() {
@@ -20,7 +21,7 @@ function Genres() {
 
     return (
         <div id="all-genres-container">
-            <h2>Todos os gêneros</h2>
+            <h2>{i18n.t('genres.allGenres')}</h2>
             <div id="all-genres-list">
                 {genres.length > 0 ? (<>
                     {genres.map((genre, idx) => (

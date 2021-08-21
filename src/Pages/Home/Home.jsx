@@ -8,6 +8,7 @@ import ArtistCards from '../../Components/ArtistCards/ArtistCards';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { scrollToTop } from '../../Helpers';
+import { i18n } from '../../translate/i18n';
 
 function Home() {
 
@@ -50,7 +51,7 @@ function Home() {
                 <Link to={"/" + props.slug}>
                     <div className="example-white"></div>
                     <img src={props.img} />
-                    <div className="example-footer">Ver mais {'>'}&nbsp;</div>
+                    <div className="example-footer">{i18n.t('home.seeMore')}&nbsp;</div>
                 </Link>
             </div>
         );
@@ -59,19 +60,19 @@ function Home() {
     return (
         <div id="homepage-container">
             <div id="numbers-info">
-                <h1>Descubra as palavras mais repetidas por seu artista/banda favorito!</h1>
+                <h1>{i18n.t('home.discover')}</h1>
                 <div id="total-words">
                     <h2 className="animate__animated animate__flipInX">{total.words}</h2>
-                    <h3>PALAVRAS ANALISADAS</h3>
+                    <h3>{i18n.t('words.analyzedWords').toUpperCase()}</h3>
                 </div>
                 <div className="amounts-info">
                     <div>
                         <h2 className="animate__animated animate__flipInX">{total.artists}</h2>
-                        <h3>ARTISTAS ANALISADOS</h3>
+                        <h3>{i18n.t('words.analyzedArtists').toUpperCase()}</h3>
                     </div>
                     <div>
                         <h2 className="animate__animated animate__flipInX">{total.songs}</h2>
-                        <h3>MÚSICAS ANALISADAS</h3>
+                        <h3>{i18n.t('words.analyzedSongs').toUpperCase()}</h3>
                     </div>
                 </div>
             </div>
@@ -83,12 +84,12 @@ function Home() {
             <div className="container">
                 <form id="field-search-form" action={"/search/" + fieldTerm}>
                     <div id="home-search">
-                        <input id="home-input" type="text" placeholder="Pesquise artista ou banda"
+                        <input id="home-input" type="text" placeholder={i18n.t('buttons.searchBar')}
                             onChange={(event) => { setFieldSearchTerm(event.target.value); }} />
                         <span><FaSearch id="search-btn" size={22} onClick={() => { submitFieldSearch() }} /></span>
                     </div>
                 </form >
-                <ArtistCards title="Mais pesquisados" loading={false} artists={artists} />
+                <ArtistCards title={i18n.t('home.popular')} loading={false} artists={artists} />
             </div>
         </div>
 
