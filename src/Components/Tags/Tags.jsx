@@ -7,8 +7,9 @@ import Tippy from '@tippyjs/react';
 import { Link } from "react-router-dom";
 import MessageModal from '../MessageModal/MessageModal';
 import ShareModal from '../ShareModal';
+import { i18n } from '../../translate/i18n';
 
-function Tags({words, name, id_genius, genres }) {
+function Tags({ words, name, id_genius, genres }) {
 
     const [openMsgModal, setOpenMsgModal] = useState(false);
     const [openShareModal, setOpenShareModal] = useState(false);
@@ -25,20 +26,20 @@ function Tags({words, name, id_genius, genres }) {
                     ))}
                 </>)}
                 <div className="share-report">
-                    <Tippy content="Compartilhar Resultado">
+                    <Tippy content={i18n.t('buttons.shareResult')}>
                         <div>
                             <GiShare id="share-btn" size="2em" onClick={() => { setOpenShareModal(true) }} />
                         </div>
                     </Tippy>
-                    <Tippy content="Reportar Erro">
+                    <Tippy content={i18n.t('buttons.reportBug')}>
                         <div>
                             <FiAlertTriangle onClick={() => { setOpenMsgModal(true) }} id="report-btn" size="1.8em" />
                         </div>
                     </Tippy>
                 </div>
                 <ShareModal words={words} name={name} open={openShareModal} setOpen={setOpenShareModal} />
-                <MessageModal id_genius={id_genius} modalTitle="Reportar erro"
-                    msgPlaceholder="Descreva o erro encontrado" open={openMsgModal} setOpen={setOpenMsgModal} />
+                <MessageModal id_genius={id_genius} modalTitle={i18n.t('messageModal.reportTitle')}
+                    msgPlaceholder={i18n.t('messageModal.reportPlaceholder')} open={openMsgModal} setOpen={setOpenMsgModal} />
             </div>
         </>
     );

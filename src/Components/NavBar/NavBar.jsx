@@ -6,7 +6,7 @@ import MessageModal from '../MessageModal/MessageModal';
 import DonateModal from '../DonateModal';
 import BRFlag from '../../images/br_flag.png';
 import USFlag from '../../images/us_flag.png';
-import {i18n} from '../../translate/i18n';
+import { i18n } from '../../translate/i18n';
 
 function NavBar() {
 
@@ -17,7 +17,7 @@ function NavBar() {
     const [openMsgModal, setOpenMsgModal] = useState(false);
     const [openDonateModal, setOpenDonateModal] = useState(false);
 
-    function changeLang(){
+    function changeLang() {
         let currentLang = localStorage.getItem(I18N_STORAGE_KEY);
         localStorage.setItem(I18N_STORAGE_KEY, (currentLang === 'pt-BR' ? 'en-US' : 'pt-BR'));
         window.location = window.location;
@@ -33,8 +33,8 @@ function NavBar() {
                     <Link to="/how-it-works"><li>{i18n.t('nav.howItWorks')}</li></Link>
                     <li onClick={() => { setOpenMsgModal(true) }}>{i18n.t('nav.contact')}</li>
                     <li style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>{i18n.t('nav.donate')}</li>
-                    <span className="lang-btn" style={{marginLeft:"10px"}} onClick={changeLang}>
-                        {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag"/>
+                    <span className="lang-btn" style={{ marginLeft: "10px" }} onClick={changeLang}>
+                        {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag" />
                     </span>
                 </ul>
                 <div className="menu-icon">
@@ -46,13 +46,13 @@ function NavBar() {
                     <span><Link to="/how-it-works">{i18n.t('nav.howItWorks')}</Link></span>
                     <span onClick={() => { setOpenMsgModal(true) }}>{i18n.t('nav.contact')}</span>
                     <span style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>{i18n.t('nav.donate')}</span>
-                    <span className="lang-btn" style={{marginLeft:"10px"}} onClick={changeLang}>
-                        {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag"/>
+                    <span className="lang-btn" style={{ marginLeft: "10px" }} onClick={changeLang}>
+                        {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag" />
                     </span>
                 </div>
             </div>
-            <MessageModal id_genius={null} modalTitle="Formulário de contato"
-                msgPlaceholder="Escreva sua mensagem de contato" open={openMsgModal} setOpen={setOpenMsgModal} />
+            <MessageModal id_genius={null} modalTitle={i18n.t('messageModal.contactTitle')}
+                msgPlaceholder={i18n.t('messageModal.contactPlaceholder')} open={openMsgModal} setOpen={setOpenMsgModal} />
             <DonateModal open={openDonateModal} setOpen={setOpenDonateModal} />
         </nav>
     );

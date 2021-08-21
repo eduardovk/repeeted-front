@@ -4,6 +4,7 @@ import { Modal } from 'react-responsive-modal';
 import MicroLoading from '../../images/micro-loading.svg';
 import ReCAPTCHA from "react-google-recaptcha";
 import { RiCloseLine } from 'react-icons/ri';
+import { i18n } from '../../translate/i18n';
 const axios = require('axios').default;
 
 function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) {
@@ -27,13 +28,13 @@ function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) 
             const url = 'http://localhost:8080/messages';
             axios.post(url, { name: name, email: email, msg: msg, id_genius: id_genius, captcha: recaptchaValue })
                 .then(r => {
-                    if (r.status === 201) alert('Mensagem enviada com sucesso!');
+                    if (r.status === 201) alert(i18n.t('messageModal.success'));
                     onCloseModal();
                 })
-                .catch(e => { alert('Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.'); })
+                .catch(e => { alert(i18n.t('messageModal.error')); })
                 .finally(() => { setLockForm(false); recaptchaRef.current.reset(); });
         } else {
-            alert(`É necessário marcar a opção "Não sou um robô"!`);
+            alert(i18n.t('messageModal.captcha'));
             setLockForm(false);
         }
     }
@@ -47,13 +48,13 @@ function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) 
                 sendMessage();
             }}>
                 <h2>{modalTitle}</h2><hr></hr><br />
-                <input type="text" placeholder="Nome" required disabled={lockForm} onChange={(e) => setName(e.target.value)} />
+                <input type="text" placeholder={i18n.t('words.name')} required disabled={lockForm} onChange={(e) => setName(e.target.value)} />
                 <input type="email" placeholder="E-mail" required disabled={lockForm} onChange={(e) => setEmail(e.target.value)} />
                 <textarea name="" id="" cols="30" rows="5" placeholder={msgPlaceholder}
                     required disabled={lockForm} onChange={(e) => setMsg(e.target.value)}></textarea>
                 {lockForm ? (
                     <button className="rough-shadow report-form-btn-disabled" ><img src={MicroLoading} /></button>) : (<>
-                        <button className="rough-shadow report-form-btn">Enviar</button>
+                        <button className="rough-shadow report-form-btn">{i18n.t('buttons.submit')}</button>
                         <div id="captcha-container">
                             <ReCAPTCHA
                                 required={true}
