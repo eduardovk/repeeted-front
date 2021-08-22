@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./style.css";
 import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io'
+import { i18n } from '../../translate/i18n';
 
 function Accordion({ total_songs, songs }) {
 
@@ -9,9 +10,9 @@ function Accordion({ total_songs, songs }) {
     return (
         <>
             <div className="accordion" onClick={() => { setShowContent(!showContent) }}>
-                <div className="accordion-title">{total_songs} Músicas analisadas</div>
+                <div className="accordion-title">{total_songs} {i18n.t('words.analyzedSongs')}</div>
                 <div className="see-more">
-                    {showContent ? (<>Ver menos<IoMdArrowDropup size="1.2em" /></>) : (<>Ver tudo<IoMdArrowDropdown size="1.2em" /></>)}
+                    {showContent ? (<>{i18n.t('buttons.seeLess')}<IoMdArrowDropup size="1.2em" /></>) : (<>{i18n.t('buttons.seeAll')}<IoMdArrowDropdown size="1.2em" /></>)}
                 </div>
                 <div></div>
             </div>

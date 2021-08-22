@@ -4,6 +4,7 @@ import "animate.css";
 import { useParams } from 'react-router-dom'
 import ArtistCards from '../../Components/ArtistCards/ArtistCards';
 import { scrollToTop } from '../../Helpers';
+import { i18n } from '../../translate/i18n';
 const axios = require('axios').default;
 
 function Search() {
@@ -29,8 +30,8 @@ function Search() {
 
     return (
         <div className="container">
-            <h3 id="searching-for">Pesquisando por termo '{term}'...</h3>
-            <ArtistCards title="Resultados da pesquisa" loading={loading} artists={artists} />
+            <h3 id="searching-for">{i18n.t('search.searching')} '{term}'...</h3>
+            <ArtistCards title={i18n.t('search.results')} loading={loading} artists={artists} />
         </div>
     );
 }

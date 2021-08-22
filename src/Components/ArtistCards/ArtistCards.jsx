@@ -3,6 +3,7 @@ import "./style.css";
 import Loading from '../../images/loading.svg';
 import Blank from '../../images/blank.png';
 import { Link } from "react-router-dom";
+import { i18n } from '../../translate/i18n';
 
 function ArtistCards(props) {
 
@@ -34,7 +35,7 @@ function ArtistCards(props) {
                                 <ArtistCard key={idx} name={artist.name} img={artist.cover} slug={artist.slug} />
                             ))}
                         </>
-                    ) : (<h2 id="no-result">Nenhum resultado encontrado.</h2>)}</>)}
+                    ) : (<h2 id="no-result">{i18n.t('artistCard.noResults')}</h2>)}</>)}
             </div>
         </>
     );

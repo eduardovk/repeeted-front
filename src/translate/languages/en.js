@@ -3,6 +3,7 @@ const messages = {
         translations: {
             words: {
                 not: 'not',
+                doesNot: 'Does not',
                 donation: 'donation',
                 brazil: 'Brazil',
                 thankYou: 'Thank you!',
@@ -17,7 +18,10 @@ const messages = {
                 searchBar: 'Search by artist or band',
                 submit: 'Submit',
                 shareResult: 'Share Result',
-                reportBug: 'Report Bug'
+                reportBug: 'Report Bug',
+                seeAll: 'See all',
+                seeLess: 'See less',
+                backToTop: 'Back to top'
             },
             nav: {
                 about: 'About',
@@ -66,6 +70,27 @@ const messages = {
                 reportPlaceholder: 'Describe here the bug you found',
                 contactTitle: 'Contact form',
                 contactPlaceholder: 'Write your contact message here'
+            },
+            search: {
+                searching: 'Searching for term',
+                results: 'Search results'
+            },
+            wordsPage: {
+                mostRepeated: 'Most repeated words by',
+                relatedArtists: 'Related artists'
+            },
+            artistCard: {
+                noResults: 'No results found.'
+            },
+            donateModal: {
+                title: 'Make a donation',
+                line1: 'This website:',
+                line2: 'display ads.',
+                line3: 'uses cookies.',
+                line4: 'uses trackers.',
+                donate1: 'Therefore, consider making a',
+                donate2: 'to help me keep it running!',
+                donate3: 'Just click on the button above to make your donation via'
             }
         }
     }

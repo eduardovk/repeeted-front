@@ -7,6 +7,7 @@ import Accordion from '../../Components/Accordion';
 import ArtistCards from '../../Components/ArtistCards';
 import PageLoading from "../../Components/PageLoading";
 import { scrollToTop } from '../../Helpers';
+import {i18n} from '../../translate/i18n';
 const axios = require('axios').default;
 
 function Words() {
@@ -54,13 +55,13 @@ function Words() {
             {loading ? (<PageLoading />) : (
                 <div className="container">
                     <ArtistInfo artist={artist} total_songs={songsData.total_songs} total_words={songsData.total_words} />
-                    <h2>Palavras mais repetidas por {artist.name}</h2>
+                    <h2>{i18n.t('wordsPage.mostRepeated')} {artist.name}</h2>
                     <div className="shadow animate__animated animate__backInUp">
                         <WordCloud words={artist.words} />
                         <Tags words={artist.words} name={artist.name} id_genius={artist.id_genius} genres={genres} />
                         <Accordion total_songs={songsData.total_songs} songs={songs} />
                     </div>
-                    <ArtistCards title="Artistas relacionados" loading={loadingRelated} artists={relatedArtists} />
+                    <ArtistCards title={i18n.t('wordsPage.relatedArtists')} loading={loadingRelated} artists={relatedArtists} />
                 </div>
             )}
 

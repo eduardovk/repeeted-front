@@ -1,6 +1,7 @@
 import React from 'react';
 import "./style.css";
 import 'animate.css';
+import { i18n } from '../../translate/i18n';
 
 function ArtistInfo({ artist, total_songs, total_words }) {
     return (
@@ -14,10 +15,10 @@ function ArtistInfo({ artist, total_songs, total_words }) {
                 </div>
                 <div className="artist-footer">
                     <div className="songs-analyzed">
-                        <span><span className="a-total">{total_songs}</span>Músicas analisadas</span>
+                        <span><span className="a-total">{total_songs}</span>{i18n.t('words.analyzedSongs')}</span>
                     </div>
                     <div className="words-analyzed">
-                        <span><span className="a-total">{total_words.toLocaleString('pt-BR')}</span>Palavras analisadas</span>
+                        <span><span className="a-total">{total_words.toLocaleString('pt-BR')}</span>{i18n.t('words.analyzedWords')}</span>
                     </div>
                 </div>
             </div>
