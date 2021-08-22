@@ -6,6 +6,7 @@ import { AiFillTwitterCircle, AiFillFacebook, AiFillRedditCircle, AiOutlineWhats
 import { FaTelegram } from 'react-icons/fa';
 import 'tippy.js/dist/tippy.css'; // optional
 import Tippy from '@tippyjs/react';
+import { i18n } from '../../translate/i18n';
 
 function ShareModal({ words, name, open, setOpen }) {
 
@@ -19,7 +20,7 @@ function ShareModal({ words, name, open, setOpen }) {
     const nameTag = encodeURI(name.replaceAll(' ', ''));
 
     const getTwitterMsg = () => {
-        var tweetBody = ` - Estas são as palavras mais repetidas por ${name}. Confira mais em: `;
+        var tweetBody = ` - ` + i18n.t('shareModal.twitterBody', {name:name});
         var charLimit = 265 - (tweetBody + nameTag + url).length;
         var wordsString = `"`;
         for (let i = 0; i < words.length; i++) {
@@ -52,7 +53,7 @@ function ShareModal({ words, name, open, setOpen }) {
             modal: 'customModal-share',
         }} closeIcon={closeIcon}>
             <div id="modal-share-body">
-                <h2>Compartilhar</h2><hr></hr>
+                <h2>{i18n.t('words.share')}</h2><hr></hr>
                 <div id="modal-share">
                     <Tippy content="Twitter">
                         <a className="no-decor twitter-icon" target="_blank" href={`https://twitter.com/share?url=${url}&text=${getTwitterMsg()}&hashtags=${nameTag},Repetician`}>

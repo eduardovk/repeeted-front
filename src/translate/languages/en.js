@@ -10,7 +10,9 @@ const messages = {
                 analyzedWords: 'Analyzed words',
                 analyzedSongs: 'Analyzed songs',
                 analyzedArtists: 'Analyzed artists',
-                name: 'Name'
+                name: 'Name',
+                loadingPage: 'Loading page',
+                share: 'Share'
             },
             buttons: {
                 paypalTitle: 'PayPal - The safer, easier way to pay online!',
@@ -91,6 +93,9 @@ const messages = {
                 donate1: 'Therefore, consider making a',
                 donate2: 'to help me keep it running!',
                 donate3: 'Just click on the button above to make your donation via'
+            },
+            shareModal: {
+                twitterBody: 'These are the most repeated words by {{name}}. Check out more at:'
             }
         }
     }

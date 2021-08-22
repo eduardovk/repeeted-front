@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import "./style.css";
 import { Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
-import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io'
+import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io';
+import { i18n } from '../../translate/i18n';
 const axios = require('axios').default;
 
 function SearchBar() {
@@ -39,7 +40,7 @@ function SearchBar() {
                     </div>
                     <div className="search-container">
                         <div className="input-container">
-                            <input type="text" placeholder="Procure por artista ou banda"
+                            <input type="text" placeholder={i18n.t('buttons.searchBar')}
                                 onChange={(event) => { setSearchTerm(event.target.value); }} />
                             <span className="search-icon" onClick={() => { submitSearch() }}>
                                 <FaSearch />
@@ -70,7 +71,7 @@ function SearchBar() {
                                 </Link>
                             ))}
                             <span id="see-all-genres">
-                                <Link className="no-decor" to="/genres/" onClick={() => { setMoreGenres(false) }}>Ver todos</Link>
+                                <Link className="no-decor" to="/genres/" onClick={() => { setMoreGenres(false) }}>{i18n.t('buttons.seeAll')}</Link>
                             </span>
                         </>)}
                     </div>
