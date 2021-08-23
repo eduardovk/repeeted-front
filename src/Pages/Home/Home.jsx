@@ -12,10 +12,11 @@ import { i18n } from '../../translate/i18n';
 
 function Home() {
 
+    const I18N_STORAGE_KEY = 'i18nextLng';
     const [fieldTerm, setFieldTerm] = useState("");
     
     const total = {words: 286721199, artists: 22119, songs: 985119};
-    Object.keys(total).map(n=>{total[n] = total[n].toLocaleString('pt-BR')});
+    Object.keys(total).map(n=>{total[n] = total[n].toLocaleString(localStorage.getItem(I18N_STORAGE_KEY))});
 
     const artists = [
         { name: 'Drake', slug: "drake", cover: 'https://images.genius.com/c6b5142a09ff5bd361d0f42a55692edc.1000x1000x1.jpg' },

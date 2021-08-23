@@ -4,6 +4,9 @@ import 'animate.css';
 import { i18n } from '../../translate/i18n';
 
 function ArtistInfo({ artist, total_songs, total_words }) {
+
+    const I18N_STORAGE_KEY = 'i18nextLng';
+
     return (
         <div className="artist-container shadow animate__animated animate__fadeInLeft">
             <div className="artist-image">
@@ -18,7 +21,7 @@ function ArtistInfo({ artist, total_songs, total_words }) {
                         <span><span className="a-total">{total_songs}</span>{i18n.t('words.analyzedSongs')}</span>
                     </div>
                     <div className="words-analyzed">
-                        <span><span className="a-total">{total_words.toLocaleString('pt-BR')}</span>{i18n.t('words.analyzedWords')}</span>
+                        <span><span className="a-total">{total_words.toLocaleString(localStorage.getItem(I18N_STORAGE_KEY))}</span>{i18n.t('words.analyzedWords')}</span>
                     </div>
                 </div>
             </div>
