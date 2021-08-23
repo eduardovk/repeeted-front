@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { GlobalContext } from '../../Contexts/GlobalContext';
 import "./style.css";
 import "animate.css";
 import RushWords from '../../images/rush.png';
@@ -12,11 +13,10 @@ import { i18n } from '../../translate/i18n';
 
 function Home() {
 
-    const I18N_STORAGE_KEY = 'i18nextLng';
+    const {lang} = useContext(GlobalContext);
     const [fieldTerm, setFieldTerm] = useState("");
-    
     const total = {words: 286721199, artists: 22119, songs: 985119};
-    Object.keys(total).map(n=>{total[n] = total[n].toLocaleString(localStorage.getItem(I18N_STORAGE_KEY))});
+    Object.keys(total).map(n=>{total[n] = total[n].toLocaleString(lang)});
 
     const artists = [
         { name: 'Drake', slug: "drake", cover: 'https://images.genius.com/c6b5142a09ff5bd361d0f42a55692edc.1000x1000x1.jpg' },

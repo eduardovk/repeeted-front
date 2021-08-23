@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { GlobalContext } from '../../Contexts/GlobalContext';
 import "./style.css";
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from "react-router-dom";
@@ -8,21 +9,12 @@ import BRFlag from '../../images/br_flag.png';
 import USFlag from '../../images/us_flag.png';
 import { i18n } from '../../translate/i18n';
 
-function NavBar() {
+function NavBar({ changeLang }) {
 
-    const I18N_STORAGE_KEY = 'i18nextLng';
-
-    const [lang] = useState(localStorage.getItem(I18N_STORAGE_KEY));
     const [showMenu, setShowMenu] = useState(false);
     const [openMsgModal, setOpenMsgModal] = useState(false);
     const [openDonateModal, setOpenDonateModal] = useState(false);
-
-    function changeLang() {
-        let currentLang = localStorage.getItem(I18N_STORAGE_KEY);
-        localStorage.setItem(I18N_STORAGE_KEY, (currentLang === 'pt-BR' ? 'en-US' : 'pt-BR'));
-        window.location = window.location;
-    }
-
+    const {lang} = useContext(GlobalContext);
     return (
         <nav>
             <div className="navbar">
