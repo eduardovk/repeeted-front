@@ -6,6 +6,7 @@ import ProfilePic from '../../images/profile.jpg';
 import { scrollToTop } from '../../Helpers';
 import { GoLinkExternal } from 'react-icons/go';
 import { i18n } from '../../translate/i18n';
+import PaypalButton from "../../Components/PaypalButton/PaypalButton";
 
 function About() {
 
@@ -40,13 +41,7 @@ function About() {
                 <p><i>{i18n.t('about.donation1')} <span style={{ color: "#b17b0f" }}><b>{i18n.t('words.donation')}</b></span> {i18n.t('about.donation2')} <b>{i18n.t('words.thankYou')}</b></i></p>
             </article>
             <div id="about-donate-btn">
-                <form action="https://www.paypal.com/donate" method="post" target="_top">
-                    <input type="hidden" name="business" value="WYLDPSDW4YBBU" />
-                    <input type="hidden" name="no_recurring" value="0" />
-                    <input type="hidden" name="currency_code" value="USD" />
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" title={i18n.t('buttons.paypalTitle')} alt={i18n.t('buttons.paypalAlt')} />
-                    <img alt="" border="0" src="https://www.paypal.com/en_BR/i/scr/pixel.gif" width="1" height="1" />
-                </form>
+                <PaypalButton />
             </div>
         </div >
     );
