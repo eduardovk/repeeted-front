@@ -24,6 +24,8 @@ function App() {
   const I18N_STORAGE_KEY = 'i18nextLng';
   const [lang] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
+  const websiteName = 'Repetician';
+
   function changeLang() {
     let currentLang = localStorage.getItem(I18N_STORAGE_KEY);
     localStorage.setItem(I18N_STORAGE_KEY, (currentLang === 'pt-BR' ? 'en-US' : 'pt-BR'));
@@ -33,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <GlobalContext.Provider value={{ lang: lang }}>
+        <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName }}>
           <NavBar changeLang={changeLang} />
           <div className="main">
             <SearchBar />

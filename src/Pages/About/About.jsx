@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "./style.css";
 import "animate.css";
 import { Link } from "react-router-dom";
@@ -7,8 +7,11 @@ import { scrollToTop } from '../../Helpers';
 import { GoLinkExternal } from 'react-icons/go';
 import { i18n } from '../../translate/i18n';
 import PaypalButton from "../../Components/PaypalButton/PaypalButton";
+import { GlobalContext } from '../../Contexts/GlobalContext';
 
 function About() {
+
+    const {websiteName} = useContext(GlobalContext);
 
     useEffect(() => {
         scrollToTop();
@@ -29,9 +32,9 @@ function About() {
             </div>
             <article id="about-text">
                 <h2>{i18n.t('about.what')}</h2>
-                <p>{i18n.t('about.whatParagraph')}</p>
+                <p>{i18n.t('about.whatParagraph', {websiteName: websiteName})}</p>
                 <h2>{i18n.t('about.why')}</h2>
-                <p>{i18n.t('about.whyParagraph')}</p>
+                <p>{i18n.t('about.whyParagraph', {websiteName: websiteName})}</p>
                 <p>{i18n.t('about.whyParagraph2')}</p>
                 <p>{i18n.t('about.whyParagraph3')}</p>
                 <h2>{i18n.t('about.how')}</h2>
