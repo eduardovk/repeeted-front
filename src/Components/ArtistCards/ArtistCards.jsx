@@ -13,7 +13,7 @@ function ArtistCards(props) {
                 <Link to={"/" + props.slug}>
                     <div className="artist-bg" style={{ backgroundImage: "url(" + props.img + ")", backgroundSize: "cover" }}></div>
                     <div className="card-white"></div>
-                    <img src={Blank} />
+                    <img src={Blank} alt={props.name} />
                     <div className="card-title">{props.name}</div>
                 </Link>
             </div>
@@ -26,7 +26,7 @@ function ArtistCards(props) {
             <div className="artist-cards-container ">
                 {props.loading ? (
                     <div id="loading-box">
-                        <img src={Loading} />
+                        <img src={Loading} alt={i18n.t('words.loadingPage')} />
                     </div>
                 ) : (<>
                     {props.artists && props.artists.length > 0 ? (

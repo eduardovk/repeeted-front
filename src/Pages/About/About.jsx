@@ -20,7 +20,7 @@ function About() {
     return (
         <div className="container" id="about-container">
             <div id="author-container" className="shadow">
-                <img id="author-pic" src={ProfilePic} />
+                <img id="author-pic" alt="Author" src={ProfilePic} />
                 <div id="author-info">
                     <p style={{ fontSize: "1.3em", fontWeight: 700 }}>Eduardo V. Kuhn <span style={{ color: "grey" }}>({i18n.t('about.author')})</span></p><hr />
                     <p style={{ fontSize: "1.1em", fontWeight: 600 }}><i>Web Developer</i></p>

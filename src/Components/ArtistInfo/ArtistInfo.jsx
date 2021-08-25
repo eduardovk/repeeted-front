@@ -11,7 +11,7 @@ function ArtistInfo({ artist, total_songs, total_words }) {
     return (
         <div className="artist-container shadow animate__animated animate__fadeInLeft">
             <div className="artist-image">
-                <img className="image-cover" src={artist.cover} />
+                <img className="image-cover" src={artist.cover} alt={artist.name}/>
             </div>
             <div className="artist-info">
                 <div className="artist-header">

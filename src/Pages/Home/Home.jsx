@@ -51,7 +51,7 @@ function Home() {
             <div className="example-artist">
                 <Link to={"/" + props.slug}>
                     <div className="example-white"></div>
-                    <img src={props.img} />
+                    <img src={props.img} alt={props.name} />
                     <div className="example-footer">{i18n.t('home.seeMore')}&nbsp;</div>
                 </Link>
             </div>
@@ -78,9 +78,9 @@ function Home() {
                 </div>
             </div>
             <div id="examples-artists">
-                <ExampleArtist img={RushWords} slug="rush" />
-                <ExampleArtist img={CannibalCorpseWords} slug="cannibal-corpse" />
-                <ExampleArtist img={CardiBWords} slug="cardi-b" />
+                <ExampleArtist img={RushWords} slug="rush" name="Rush" />
+                <ExampleArtist img={CannibalCorpseWords} slug="cannibal-corpse" name="Cannibal Corpse" />
+                <ExampleArtist img={CardiBWords} slug="cardi-b" name="Cardi B" />
             </div>
             <div className="container">
                 <form id="field-search-form" action={"/search/" + fieldTerm}>

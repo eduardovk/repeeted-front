@@ -53,7 +53,7 @@ function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) 
                 <textarea name="" id="" cols="30" rows="5" placeholder={msgPlaceholder}
                     required disabled={lockForm} onChange={(e) => setMsg(e.target.value)}></textarea>
                 {lockForm ? (
-                    <button className="rough-shadow report-form-btn-disabled" ><img src={MicroLoading} /></button>) : (<>
+                    <button className="rough-shadow report-form-btn-disabled" ><img src={MicroLoading} alt={i18n.t('words.loadingPage')}/></button>) : (<>
                         <button className="rough-shadow report-form-btn">{i18n.t('buttons.submit')}</button>
                         <div id="captcha-container">
                             <ReCAPTCHA

@@ -14,7 +14,7 @@ function NavBar({ changeLang }) {
     const [showMenu, setShowMenu] = useState(false);
     const [openMsgModal, setOpenMsgModal] = useState(false);
     const [openDonateModal, setOpenDonateModal] = useState(false);
-    const {lang} = useContext(GlobalContext);
+    const { lang } = useContext(GlobalContext);
     return (
         <nav>
             <div className="navbar">
@@ -26,7 +26,8 @@ function NavBar({ changeLang }) {
                     <li onClick={() => { setOpenMsgModal(true) }}>{i18n.t('nav.contact')}</li>
                     <li style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>{i18n.t('nav.donate')}</li>
                     <span className="lang-btn" style={{ marginLeft: "10px" }} onClick={changeLang}>
-                        {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag" />
+                        {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag"
+                            alt={lang === 'pt-BR' ? ('Bandeira do Brasil') : ('US Flag')} />
                     </span>
                 </ul>
                 <div className="menu-icon">
@@ -39,7 +40,8 @@ function NavBar({ changeLang }) {
                     <span onClick={() => { setOpenMsgModal(true) }}>{i18n.t('nav.contact')}</span>
                     <span style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>{i18n.t('nav.donate')}</span>
                     <span className="lang-btn" style={{ marginLeft: "10px" }} onClick={changeLang}>
-                        {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag" />
+                        {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag"
+                            alt={lang === 'pt-BR' ? ('Bandeira do Brasil') : ('US Flag')} />
                     </span>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import ReactWordcloud from 'react-wordcloud';
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 import Loading from '../../images/loading.svg';
+import { i18n } from '../../translate/i18n';
 
 function WordCloud({ words }) {
 
@@ -28,7 +29,7 @@ function WordCloud({ words }) {
     return (
         <>
             <div className="wordcloud-container">
-                {!showWordCloud ? (<p><img src={Loading} /></p>) : (<ReactWordcloud words={words} options={options} />)}
+                {!showWordCloud ? (<p><img src={Loading} alt={i18n.t('words.loadingPage')} /></p>) : (<ReactWordcloud words={words} options={options} />)}
             </div>
         </>
     );
