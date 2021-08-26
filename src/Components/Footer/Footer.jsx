@@ -8,7 +8,6 @@ import PaypalButton from '../PaypalButton/PaypalButton';
 
 function Footer() {
 
-    const [showMenu, setShowMenu] = useState(false);
     const [openMsgModal, setOpenMsgModal] = useState(false);
 
     return (

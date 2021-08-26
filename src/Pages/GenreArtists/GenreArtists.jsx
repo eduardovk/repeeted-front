@@ -22,23 +22,23 @@ function GenreArtists() {
         scrollToTop();
         if (slug && slug.trim() !== '') {
             setLoading(true);
-            if (!page || page.trim() === '') page = 1;
-            setCurrentPage(parseInt(page));
-            axios.get(`http://localhost:8080/search/genre/${slug}/${page}`).then(res => {
+            var pageNumber = (!page || page.trim() === '') ?  1 : page;
+            setCurrentPage(parseInt(pageNumber));
+            axios.get(`http://localhost:8080/search/genre/${slug}/${pageNumber}`).then(res => {
                 if (res.data) {
                     setArtists(res.data.artists);
                     setGenre(res.data.genre.toUpperCase());
                     let totalPages = res.data.totalPages;
                     setTotalPages(totalPages);
-                    page > 1 ? setHasPrevious(true) : setHasPrevious(false);
-                    ((totalPages > 1) && (page < totalPages)) ? setHasNext(true) : setHasNext(false);
+                    pageNumber > 1 ? setHasPrevious(true) : setHasPrevious(false);
+                    ((totalPages > 1) && (pageNumber < totalPages)) ? setHasNext(true) : setHasNext(false);
                     setLoading(false);
                 }
             }).catch(e => console.log(e));
         } else {
             setLoading(false);
         }
-    }, []);
+    }, [page,slug]);
 
     return (
         <div className="container">

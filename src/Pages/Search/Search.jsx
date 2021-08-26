@@ -26,7 +26,7 @@ function Search() {
         } else {
             setLoading(false);
         }
-    }, []);
+    }, [term]);
 
     return (
         <div className="container">

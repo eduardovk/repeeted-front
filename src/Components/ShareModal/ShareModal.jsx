@@ -20,7 +20,7 @@ function ShareModal({ words, name, open, setOpen }) {
     const nameTag = encodeURI(name.replaceAll(' ', ''));
 
     const getTwitterMsg = () => {
-        var tweetBody = ` - ` + i18n.t('shareModal.twitterBody', {name:name});
+        var tweetBody = ` - ` + i18n.t('shareModal.twitterBody', { name: name });
         var charLimit = 265 - (tweetBody + nameTag + url).length;
         var wordsString = `"`;
         for (let i = 0; i < words.length; i++) {
@@ -56,7 +56,8 @@ function ShareModal({ words, name, open, setOpen }) {
                 <h2>{i18n.t('words.share')}</h2><hr></hr>
                 <div id="modal-share">
                     <Tippy content="Twitter">
-                        <a className="no-decor twitter-icon" target="_blank" href={`https://twitter.com/share?url=${url}&text=${getTwitterMsg()}&hashtags=${nameTag},Repetician`}>
+                        <a className="no-decor twitter-icon" target="_blank" rel="noopener noreferrer"
+                            href={`https://twitter.com/share?url=${url}&text=${getTwitterMsg()}&hashtags=${nameTag},Repetician`}>
                             <AiFillTwitterCircle size={40} />
                         </a>
                     </Tippy>
@@ -66,17 +67,17 @@ function ShareModal({ words, name, open, setOpen }) {
                         </span>
                     </Tippy>
                     <Tippy content="Reddit">
-                        <a className="no-decor reddit-icon" target="_blank" href={getRedditUrl()}>
+                        <a className="no-decor reddit-icon" target="_blank" rel="noopener noreferrer" href={getRedditUrl()}>
                             <AiFillRedditCircle size={40} />
                         </a>
                     </Tippy>
                     <Tippy content="Telegram">
-                        <a className="no-decor telegram-icon" target="_blank" href={getTelegramUrl()}>
+                        <a className="no-decor telegram-icon" target="_blank" rel="noopener noreferrer" href={getTelegramUrl()}>
                             <FaTelegram size={35} />
                         </a>
                     </Tippy>
                     <Tippy content="Whatsapp">
-                        <a className="no-decor whatsapp-icon" target="_blank" href={getWhatsappUrl()}>
+                        <a className="no-decor whatsapp-icon" target="_blank" rel="noopener noreferrer" href={getWhatsappUrl()}>
                             <AiOutlineWhatsApp size={40} />
                         </a>
                     </Tippy>

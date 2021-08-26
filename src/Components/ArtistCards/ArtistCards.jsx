@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./style.css";
 import Loading from '../../images/loading.svg';
 import Blank from '../../images/blank.png';

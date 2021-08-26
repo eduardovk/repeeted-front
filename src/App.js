@@ -24,12 +24,12 @@ function App() {
   const I18N_STORAGE_KEY = 'i18nextLng';
   const [lang] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
-  const websiteName = 'Repetician';
+  const websiteName = 'Repeeted';
 
   function changeLang() {
     let currentLang = localStorage.getItem(I18N_STORAGE_KEY);
     localStorage.setItem(I18N_STORAGE_KEY, (currentLang === 'pt-BR' ? 'en-US' : 'pt-BR'));
-    window.location = window.location;
+    window.location = window.location.href;
   }
 
   return (

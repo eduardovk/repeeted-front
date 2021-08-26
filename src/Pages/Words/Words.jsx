@@ -31,14 +31,14 @@ function Words() {
                     setSongs(res.data.songs);
                     setGenres(res.data.genres);
                     let totalWords = 0;
-                    res.data.songs.map(s => { totalWords += s.analyzed });
+                    res.data.songs.map(s => { totalWords += s.analyzed; return s; });
                     setSongsData({
                         total_songs: res.data.songs.length,
                         total_words: totalWords
                     });
                     setLoading(false);
                     const related = res.data.artist.related;
-                    if (related && related != '0') {
+                    if (related && related !== '0') {
                         axios.get('http://localhost:8080/search/related/' + related).then(resp => {
                             if (resp.data && resp.data.response)
                                 setRelatedArtists(resp.data.response);
@@ -48,7 +48,7 @@ function Words() {
                 }
             }).catch(e => console.log(e));
         }
-    }, []);
+    }, [slug]);
 
     return (
         <>

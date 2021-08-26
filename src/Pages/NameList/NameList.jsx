@@ -23,17 +23,17 @@ function NameList() {
         scrollToTop();
         if (letter && letter.trim() !== '') {
             setLoading(true);
-            if (!page || page.trim() === '') page = 1;
-            setCurrentPage(parseInt(page));
-            axios.get(`http://localhost:8080/search/letter/${letter}/${page}`).then(res => {
+            var pageNumber = (!page || page.trim() === '') ?  1 : page;
+            setCurrentPage(parseInt(pageNumber));
+            axios.get(`http://localhost:8080/search/letter/${letter}/${pageNumber}`).then(res => {
                 if (res.data) {
                     let artists = res.data.artists;
                     if (artists && artists.length > 0) {
                         setArtists(artists);
                         let totalPages = res.data.totalPages;
                         setTotalPages(totalPages);
-                        page > 1 ? setHasPrevious(true) : setHasPrevious(false);
-                        ((totalPages > 1) && (page < totalPages)) ? setHasNext(true) : setHasNext(false);
+                        pageNumber > 1 ? setHasPrevious(true) : setHasPrevious(false);
+                        ((totalPages > 1) && (pageNumber < totalPages)) ? setHasNext(true) : setHasNext(false);
                     }
                 }
                 setLoading(false);
@@ -41,7 +41,7 @@ function NameList() {
         } else {
             setLoading(false);
         }
-    }, []);
+    }, [letter,page]);
 
     return (
         <div className="container">

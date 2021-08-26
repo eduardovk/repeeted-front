@@ -26,7 +26,7 @@ function About() {
                     <p style={{ fontSize: "1.1em", fontWeight: 600 }}><i>Web Developer</i></p>
                     <p style={{ fontSize: ".9em" }}>Porto Alegre/RS - {i18n.t('words.brazil')}</p>
                     <span id="author-links">
-                        <a target="_blank" href="https://linktr.ee/eduardovk">Linktree<GoLinkExternal /></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://linktr.ee/eduardovk">Linktree<GoLinkExternal /></a>
                     </span>
                 </div>
             </div>

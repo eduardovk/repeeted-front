@@ -16,7 +16,7 @@ function Home() {
     const {lang} = useContext(GlobalContext);
     const [fieldTerm, setFieldTerm] = useState("");
     const total = {words: 286721199, artists: 22119, songs: 985119};
-    Object.keys(total).map(n=>{total[n] = total[n].toLocaleString(lang)});
+    Object.keys(total).map(n=>{total[n] = total[n].toLocaleString(lang); return n;});
 
     const artists = [
         { name: 'Drake', slug: "drake", cover: 'https://images.genius.com/c6b5142a09ff5bd361d0f42a55692edc.1000x1000x1.jpg' },
