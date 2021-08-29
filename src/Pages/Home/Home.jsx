@@ -13,10 +13,14 @@ import { i18n } from '../../translate/i18n';
 
 function Home() {
 
-    const {lang} = useContext(GlobalContext);
+    const { lang } = useContext(GlobalContext);
     const [fieldTerm, setFieldTerm] = useState("");
-    const total = {words: 286721199, artists: 22119, songs: 985119};
-    Object.keys(total).map(n=>{total[n] = total[n].toLocaleString(lang); return n;});
+    const total = {
+        words: parseInt(process.env.REACT_APP_TOTAL_WORDS),
+        artists: parseInt(process.env.REACT_APP_TOTAL_ARTISTS),
+        songs: parseInt(process.env.REACT_APP_TOTAL_SONGS)
+    };
+    Object.keys(total).map(n => { total[n] = total[n].toLocaleString(lang); return n; });
 
     const artists = [
         { name: 'Drake', slug: "drake", cover: 'https://images.genius.com/c6b5142a09ff5bd361d0f42a55692edc.1000x1000x1.jpg' },
@@ -51,7 +55,7 @@ function Home() {
             <div className="example-artist">
                 <Link to={"/" + props.slug}>
                     <div className="example-white"></div>
-                    <img src={props.img} alt={props.name} loading="lazy"/>
+                    <img src={props.img} alt={props.name} loading="lazy" />
                     <div className="example-footer">{i18n.t('home.seeMore')}&nbsp;</div>
                 </Link>
             </div>

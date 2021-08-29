@@ -61,7 +61,7 @@ function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) 
                             <ReCAPTCHA
                                 required={true}
                                 ref={recaptchaRef}
-                                sitekey="6LflTS4cAAAAAH9hkBcWa1Tn5Si9Z4RN4ztIM6uy"
+                                sitekey={process.env.REACT_APP_CAPTCHA_KEY}
                             />
                         </div>
                     </>)}

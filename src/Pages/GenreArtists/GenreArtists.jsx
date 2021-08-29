@@ -41,7 +41,7 @@ function GenreArtists() {
         } else {
             setLoading(false);
         }
-    }, [page,slug]);
+    }, [page,slug,apiURL]);
 
     return (
         <div className="container">

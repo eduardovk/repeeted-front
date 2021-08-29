@@ -24,8 +24,8 @@ function App() {
   const I18N_STORAGE_KEY = 'i18nextLng';
   const [lang] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
-  const websiteName = 'Repeeted';
-  const apiURL = 'https://repeeted-api.herokuapp.com';
+  const websiteName = process.env.REACT_APP_WEBSITE_NAME;
+  const apiURL = process.env.REACT_APP_API_URL;
 
   function changeLang() {
     let currentLang = localStorage.getItem(I18N_STORAGE_KEY);

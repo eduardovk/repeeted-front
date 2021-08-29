@@ -28,7 +28,7 @@ function Search() {
         } else {
             setLoading(false);
         }
-    }, [term]);
+    }, [term, apiURL]);
 
     return (
         <div className="container">

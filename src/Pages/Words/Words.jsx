@@ -50,7 +50,7 @@ function Words() {
                 }
             }).catch(e => console.log(e));
         }
-    }, [slug]);
+    }, [slug,apiURL]);
 
     return (
         <>

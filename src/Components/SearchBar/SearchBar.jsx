@@ -28,7 +28,7 @@ function SearchBar() {
         axios.get(url).then(res => {
             setGenres(res.data);
         }).catch(e => console.log(e));
-    }, []);
+    }, [apiURL]);
 
     return (
         <>

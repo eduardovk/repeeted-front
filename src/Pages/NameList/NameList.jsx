@@ -43,7 +43,7 @@ function NameList() {
         } else {
             setLoading(false);
         }
-    }, [letter,page]);
+    }, [letter,page,apiURL]);
 
     return (
         <div className="container">

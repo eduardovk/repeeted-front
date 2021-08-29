@@ -19,7 +19,7 @@ function Genres() {
         axios.get(url).then(res => {
             setGenres(res.data);
         }).catch(e => console.log(e));
-    }, []);
+    }, [apiURL]);
 
     return (
         <div id="all-genres-container">
