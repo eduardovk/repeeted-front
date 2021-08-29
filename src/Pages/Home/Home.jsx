@@ -51,7 +51,7 @@ function Home() {
             <div className="example-artist">
                 <Link to={"/" + props.slug}>
                     <div className="example-white"></div>
-                    <img src={props.img} alt={props.name} />
+                    <img src={props.img} alt={props.name} loading="lazy"/>
                     <div className="example-footer">{i18n.t('home.seeMore')}&nbsp;</div>
                 </Link>
             </div>

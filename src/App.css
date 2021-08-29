@@ -1,9 +1,9 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap'); */
 
-@font-face {
+/* @font-face {
     font-family: 'Oswald';
     src: local('Oswald'), url(./fonts/Oswald-Regular.ttf) format('truetype');
-  }
+  } */
 
 .main{
     max-width: 1100px;
