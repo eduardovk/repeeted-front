@@ -25,6 +25,7 @@ function App() {
   const [lang] = useState(localStorage.getItem(I18N_STORAGE_KEY));
 
   const websiteName = 'Repeeted';
+  const apiURL = 'https://repeeted-api.herokuapp.com';
 
   function changeLang() {
     let currentLang = localStorage.getItem(I18N_STORAGE_KEY);
@@ -35,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName }}>
+        <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName, apiURL: apiURL }}>
           <NavBar changeLang={changeLang} />
           <div className="main">
             <SearchBar />

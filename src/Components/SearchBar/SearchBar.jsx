@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import "./style.css";
 import { Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
 import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io';
 import { i18n } from '../../translate/i18n';
+import { GlobalContext } from '../../Contexts/GlobalContext';
 const axios = require('axios').default;
 
 function SearchBar() {
 
+    const {apiURL} = useContext(GlobalContext);
     const [term, setTerm] = useState("");
     const [moreGenres, setMoreGenres] = useState(false);
     const [genres, setGenres] = useState(null);
@@ -22,7 +24,7 @@ function SearchBar() {
     }
 
     useEffect(() => {
-        const url = 'http://localhost:8080/genres/80';
+        const url = `${apiURL}/genres/80`;
         axios.get(url).then(res => {
             setGenres(res.data);
         }).catch(e => console.log(e));

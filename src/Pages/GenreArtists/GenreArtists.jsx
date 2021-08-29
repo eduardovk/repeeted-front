@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./style.css";
 import "animate.css";
 import { useParams } from 'react-router-dom'
 import ArtistCards from '../../Components/ArtistCards/ArtistCards';
 import Paginator from '../../Components/Paginator/Paginator';
 import { scrollToTop } from '../../Helpers';
+import { GlobalContext } from '../../Contexts/GlobalContext';
+
 const axios = require('axios').default;
 
 function GenreArtists() {
 
     var { slug, page } = useParams();
+    const {apiURL} = useContext(GlobalContext);
     const [loading, setLoading] = useState(true);
     const [genre, setGenre] = useState(null);
     const [artists, setArtists] = useState(null);
@@ -24,7 +27,7 @@ function GenreArtists() {
             setLoading(true);
             var pageNumber = (!page || page.trim() === '') ?  1 : page;
             setCurrentPage(parseInt(pageNumber));
-            axios.get(`http://localhost:8080/search/genre/${slug}/${pageNumber}`).then(res => {
+            axios.get(`${apiURL}/search/genre/${slug}/${pageNumber}`).then(res => {
                 if (res.data) {
                     setArtists(res.data.artists);
                     setGenre(res.data.genre.toUpperCase());

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from 'react-router-dom'
 import "./style.css";
 import "animate.css";
@@ -6,11 +6,13 @@ import { Link } from "react-router-dom";
 import PageLoading from "../../Components/PageLoading";
 import Paginator from '../../Components/Paginator';
 import { scrollToTop } from '../../Helpers';
+import { GlobalContext } from '../../Contexts/GlobalContext';
 const axios = require('axios').default;
 
 function NameList() {
 
     var { letter, page } = useParams();
+    const {apiURL} = useContext(GlobalContext);
 
     const [loading, setLoading] = useState(true);
     const [artists, setArtists] = useState(null);
@@ -25,7 +27,7 @@ function NameList() {
             setLoading(true);
             var pageNumber = (!page || page.trim() === '') ?  1 : page;
             setCurrentPage(parseInt(pageNumber));
-            axios.get(`http://localhost:8080/search/letter/${letter}/${pageNumber}`).then(res => {
+            axios.get(`${apiURL}/search/letter/${letter}/${pageNumber}`).then(res => {
                 if (res.data) {
                     let artists = res.data.artists;
                     if (artists && artists.length > 0) {

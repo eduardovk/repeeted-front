@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import "./style.css";
 import { Modal } from 'react-responsive-modal';
 import MicroLoading from '../../images/micro-loading.svg';
 import ReCAPTCHA from "react-google-recaptcha";
 import { RiCloseLine } from 'react-icons/ri';
 import { i18n } from '../../translate/i18n';
+import { GlobalContext } from '../../Contexts/GlobalContext';
 const axios = require('axios').default;
 
 function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) {
@@ -16,6 +17,7 @@ function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) 
     const onCloseModal = () => setOpen(false);
 
     const recaptchaRef = useRef();
+    const {apiURL} = useContext(GlobalContext);
 
     const closeIcon = (
         <span style={{ color: "#5a4310" }}><RiCloseLine size={30} /></span>
@@ -25,7 +27,7 @@ function MessageModal({ id_genius, modalTitle, msgPlaceholder, open, setOpen }) 
         setLockForm(true);
         const recaptchaValue = recaptchaRef.current.getValue();
         if (recaptchaValue) {
-            const url = 'http://localhost:8080/messages';
+            const url = `${apiURL}/messages`;
             axios.post(url, { name: name, email: email, msg: msg, id_genius: id_genius, captcha: recaptchaValue })
                 .then(r => {
                     if (r.status === 201) alert(i18n.t('messageModal.success'));

@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./style.css";
 import "animate.css";
 import { Link } from "react-router-dom";
 import PageLoading from "../../Components/PageLoading";
 import { scrollToTop } from '../../Helpers';
 import { i18n } from '../../translate/i18n';
+import { GlobalContext } from '../../Contexts/GlobalContext';
 const axios = require('axios').default;
 
 function Genres() {
 
     const [genres, setGenres] = useState([]);
+    const {apiURL} = useContext(GlobalContext);
 
     useEffect(() => {
         scrollToTop();
-        const url = 'http://localhost:8080/genres';
+        const url = `${apiURL}/genres`;
         axios.get(url).then(res => {
             setGenres(res.data);
         }).catch(e => console.log(e));
