@@ -2,9 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import { GlobalContext } from '../../Contexts/GlobalContext';
 import "./style.css";
 import "animate.css";
-import RushWords from '../../images/rush.png';
-import CannibalCorpseWords from '../../images/cannibal-corpse.png';
-import CardiBWords from '../../images/cardi-b.png';
 import ArtistCards from '../../Components/ArtistCards/ArtistCards';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from "react-router-dom";
@@ -15,6 +12,7 @@ function Home() {
 
     const { lang } = useContext(GlobalContext);
     const [fieldTerm, setFieldTerm] = useState("");
+    const S3URL = lang === 'pt-BR' ? process.env.REACT_APP_S3_SA_URL : process.env.REACT_APP_S3_US_URL;
     const total = {
         words: parseInt(process.env.REACT_APP_TOTAL_WORDS),
         artists: parseInt(process.env.REACT_APP_TOTAL_ARTISTS),
@@ -23,21 +21,21 @@ function Home() {
     Object.keys(total).map(n => { total[n] = total[n].toLocaleString(lang); return n; });
 
     const artists = [
-        { name: 'Drake', slug: "drake", cover: 'https://images.genius.com/c6b5142a09ff5bd361d0f42a55692edc.1000x1000x1.jpg' },
-        { name: 'Eminem', slug: "eminem", cover: 'https://images.genius.com/c674178296f3d65792a66f851fbc62fc.900x900x1.png' },
-        { name: 'Billie Eilish', slug: "billie-eilish", cover: 'https://images.genius.com/1aa6c04aad3652556046bb3aabe96498.900x900x1.jpg' },
-        { name: 'Lana Del Rey', slug: "lana-del-rey", cover: 'https://images.genius.com/a90b579f172cd6ff536fc094109179a0.465x465x1.png' },
-        { name: 'The Weeknd', slug: "the-weeknd", cover: 'https://images.genius.com/f0813e600d43b8b43c94e8ba1dde880a.640x640x1.png' },
-        { name: 'Pink Floyd', slug: "pink-floyd", cover: 'https://images.genius.com/6b5c50912d99c3cf0eabfec5f427c452.1000x1000x1.jpg' },
-        { name: 'The Beatles', slug: "the-beatles", cover: 'https://images.genius.com/df75ede64ffcf049727bfbb01d323081.400x400x1.jpg' },
-        { name: 'Ed Sheeran', slug: "ed-sheeran", cover: 'https://images.genius.com/b501daeff73d1b17610f47a5668f690a.1000x1000x1.jpg' },
-        { name: 'Gorillaz', slug: "gorillaz", cover: 'https://images.genius.com/c9182b5ecce1ab6d22ba0eaddb635424.400x400x1.jpg' },
-        { name: 'Halsey', slug: "halsey", cover: 'https://images.genius.com/039d606853bc3c7354475fd74ce630e9.400x400x1.jpg' },
-        { name: 'The Strokes', slug: "the-strokes", cover: 'https://images.genius.com/b5237c13de1a05f92ca6327d854cbfc8.1000x1000x1.jpg' },
-        { name: 'Black Eyed Peas', slug: "black-eyed-peas", cover: 'https://images.genius.com/67d990fb2d231bf7e3e5c6555cceb379.1000x1000x1.jpg' },
-        { name: 'Fetty Wap', slug: "fetty-wap", cover: 'https://images.genius.com/2db490b018326cc845af1b3dbb102cde.834x834x1.jpg' },
-        { name: 'Ariana Grande', slug: "ariana-grande", cover: 'https://images.genius.com/d36a47955ac0ddb12748c5e7c2bd4b4b.640x640x1.jpg' },
-        { name: 'Coldplay', slug: "coldplay", cover: 'https://images.genius.com/e4f988f1ee26618c5dd41b59b8ff2b43.1000x1000x1.jpg' }
+        { name: 'Drake', id: 1, slug: "drake", on_s3: 1 },
+        { name: 'Eminem', id: 2, slug: "eminem", on_s3: 1 },
+        { name: 'Billie Eilish', id: 23, slug: "billie-eilish", on_s3: 1 },
+        { name: 'Lana Del Rey', id: 163, slug: "lana-del-rey", on_s3: 1 },
+        { name: 'The Weeknd', id: 5, slug: "the-weeknd", on_s3: 1 },
+        { name: 'Pink Floyd', id: 100, slug: "pink-floyd", on_s3: 1 },
+        { name: 'The Beatles', id: 202, slug: "the-beatles", on_s3: 1 },
+        { name: 'Ed Sheeran', id: 15, slug: "ed-sheeran", on_s3: 1 },
+        { name: 'Gorillaz', id: 103, slug: "gorillaz", on_s3: 1 },
+        { name: 'Halsey', id: 55, slug: "halsey", on_s3: 1 },
+        { name: 'The Strokes', id: 224, slug: "the-strokes", on_s3: 1 },
+        { name: 'Black Eyed Peas', id: 349, slug: "black-eyed-peas", on_s3: 1 },
+        { name: 'Fetty Wap', id: 50, slug: "fetty-wap", on_s3: 1 },
+        { name: 'Ariana Grande', id: 9, slug: "ariana-grande", on_s3: 1 },
+        { name: 'Coldplay', id: 101, slug: "coldplay", on_s3: 1 }
     ]
 
     useEffect(() => { scrollToTop() }, []);
@@ -55,7 +53,7 @@ function Home() {
             <div className="example-artist">
                 <Link to={"/" + props.slug}>
                     <div className="example-white"></div>
-                    <img src={props.img} alt={props.name} loading="lazy" />
+                    <img src={S3URL+props.img} alt={props.name} loading="lazy" />
                     <div className="example-footer">{i18n.t('home.seeMore')}&nbsp;</div>
                 </Link>
             </div>
@@ -64,7 +62,7 @@ function Home() {
 
     return (
         <div id="homepage-container">
-            <div id="numbers-info">
+            <div id="numbers-info" style={{backgroundImage: `url(${S3URL}mic-pattern.jpg)`}}>
                 <h1>{i18n.t('home.discover')}</h1>
                 <div id="total-words">
                     <h2 className="animate__animated animate__flipInX">{total.words}</h2>
@@ -82,9 +80,9 @@ function Home() {
                 </div>
             </div>
             <div id="examples-artists">
-                <ExampleArtist img={RushWords} slug="rush" name="Rush" />
-                <ExampleArtist img={CannibalCorpseWords} slug="cannibal-corpse" name="Cannibal Corpse" />
-                <ExampleArtist img={CardiBWords} slug="cardi-b" name="Cardi B" />
+                <ExampleArtist img="example-rush.jpg" slug="rush" name="Rush" />
+                <ExampleArtist img="example-cannibal-corpse.jpg" slug="cannibal-corpse" name="Cannibal Corpse" />
+                <ExampleArtist img="example-cardi-b.jpg" slug="cardi-b" name="Cardi B" />
             </div>
             <div className="container">
                 <form id="field-search-form" action={"/search/" + fieldTerm}>

@@ -1,14 +1,8 @@
 #numbers-info{
-    /* max-width: 90%; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px 0 20px 0;
-    /* margin: 25px auto; */
-    /* padding-bottom: 50px; */
-    background-image: url("../../images/mic-pattern.png");
-    background-size: 2000px;
-    /* background-color: rgba(252, 186, 3, 0.5); */
 }
 
 #numbers-info h1{
@@ -17,7 +11,6 @@
     font-weight: 700;
     color: #424242;
     padding: 0px 10px 0px 10px;
-    /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 #total-words{
@@ -31,7 +24,6 @@
     color: #1c395c;
     font-family: "Oswald";
     margin: 0;
-    /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 #total-words h3{
@@ -41,14 +33,12 @@
     color: #424242;
     font-family: "Oswald";
     margin-top: 0;
-    /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 .amounts-info{
     flex-basis: 100%;
     display: flex;
     justify-content: center;
-    /* background-color: rgba(0, 0, 0, 0.1); */
     font-family: "Oswald";
     margin-bottom: 20px;
     flex-wrap: wrap;
@@ -57,7 +47,6 @@
 .amounts-info div{
     text-align: center;
     margin: 0 20px 0 20px
-    /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 .amounts-info h2{
@@ -121,7 +110,6 @@
     max-width: 300px;
     margin: 5px auto 30px auto;
     position: relative;
-    /* background-color: tomato; */
 }
 
 #home-input{
@@ -172,9 +160,6 @@
     #total-words h3{
         font-size: 1.5em;
     }
-    #numbers-info{
-        background-size: 3000px;
-    }
     #home-input{
         font-size: 1.2em;
     }
@@ -183,11 +168,5 @@
 @media(min-width: 615px){
     #examples-artists{
         flex-wrap:nowrap;
-    }
-}
-
-@media (min-width: 640px){
-    #numbers-info{
-        background-size: 4000px;
     }
 }

@@ -23,6 +23,7 @@ function App() {
 
   const I18N_STORAGE_KEY = 'i18nextLng';
   const [lang] = useState(localStorage.getItem(I18N_STORAGE_KEY));
+  const S3URL = lang === 'pt-BR' ? process.env.REACT_APP_S3_SA_URL : process.env.REACT_APP_S3_US_URL;
 
   const websiteName = process.env.REACT_APP_WEBSITE_NAME;
   const apiURL = process.env.REACT_APP_API_URL;
@@ -34,7 +35,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage: `url(${S3URL}background.jpg)`}}>
       <Router>
         <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName, apiURL: apiURL }}>
           <NavBar changeLang={changeLang} />

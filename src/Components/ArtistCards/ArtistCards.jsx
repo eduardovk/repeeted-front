@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "./style.css";
 import Loading from '../../images/loading.svg';
 import Blank from '../../images/blank.png';
 import { Link } from "react-router-dom";
 import { i18n } from '../../translate/i18n';
+import { GlobalContext } from '../../Contexts/GlobalContext';
+import { generateImgURL } from '../../Helpers';
 
 function ArtistCards(props) {
 
-    const ArtistCard = (props) => {
+    const { lang } = useContext(GlobalContext);
+
+    const ArtistCard = ({ artist }) => {
         return (
             <div className="artist-card">
-                <Link to={"/" + props.slug}>
-                    <div className="artist-bg" style={{ backgroundImage: "url(" + props.img + ")", backgroundSize: "cover" }}></div>
+                <Link to={"/" + artist.slug}>
+                    <div className="artist-bg" style={{ backgroundImage: "url(" + generateImgURL(artist, lang) + ")", backgroundSize: "cover" }}></div>
                     <div className="card-white"></div>
-                    <img src={Blank} alt={props.name} />
-                    <div className="card-title">{props.name}</div>
+                    <img src={Blank} alt={artist.name} />
+                    <div className="card-title">{artist.name}</div>
                 </Link>
             </div>
         );
@@ -32,7 +36,7 @@ function ArtistCards(props) {
                     {props.artists && props.artists.length > 0 ? (
                         <>
                             {props.artists.map((artist, idx) => (
-                                <ArtistCard key={idx} name={artist.name} img={artist.cover} slug={artist.slug} />
+                                <ArtistCard key={idx} artist={artist} />
                             ))}
                         </>
                     ) : (<h2 id="no-result">{i18n.t('artistCard.noResults')}</h2>)}</>)}

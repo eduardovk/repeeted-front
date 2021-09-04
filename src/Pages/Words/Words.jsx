@@ -7,13 +7,13 @@ import Accordion from '../../Components/Accordion';
 import ArtistCards from '../../Components/ArtistCards';
 import PageLoading from "../../Components/PageLoading";
 import { scrollToTop } from '../../Helpers';
-import {i18n} from '../../translate/i18n';
+import { i18n } from '../../translate/i18n';
 import { GlobalContext } from '../../Contexts/GlobalContext';
 const axios = require('axios').default;
 
 function Words() {
     const { slug } = useParams();
-    const {apiURL} = useContext(GlobalContext);
+    const { apiURL } = useContext(GlobalContext);
     const [loading, setLoading] = useState(true);
     const [loadingRelated, setLoadingRelated] = useState(true);
     const [artist, setArtist] = useState(null);
@@ -29,6 +29,7 @@ function Words() {
             setLoadingRelated(true);
             axios.get(`${apiURL}/words/` + slug).then(res => {
                 if (res.data && res.data.artist) {
+                    res.data.artist.slug = slug;
                     setArtist(res.data.artist);
                     setSongs(res.data.songs);
                     setGenres(res.data.genres);
@@ -50,7 +51,7 @@ function Words() {
                 }
             }).catch(e => console.log(e));
         }
-    }, [slug,apiURL]);
+    }, [slug, apiURL]);
 
     return (
         <>

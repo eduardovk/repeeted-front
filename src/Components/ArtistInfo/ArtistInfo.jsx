@@ -1,17 +1,18 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../../Contexts/GlobalContext';
 import "./style.css";
 import 'animate.css';
 import { i18n } from '../../translate/i18n';
+import { generateImgURL } from '../../Helpers';
 
 function ArtistInfo({ artist, total_songs, total_words }) {
 
-    const {lang} = useContext(GlobalContext);
+    const { lang } = useContext(GlobalContext);
 
     return (
         <div className="artist-container shadow animate__animated animate__fadeInLeft">
             <div className="artist-image">
-                <img className="image-cover" src={artist.cover} alt={artist.name}/>
+                <img className="image-cover" src={generateImgURL(artist, lang)} alt={artist.name} />
             </div>
             <div className="artist-info">
                 <div className="artist-header">
