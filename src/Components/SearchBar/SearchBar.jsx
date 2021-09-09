@@ -5,14 +5,15 @@ import { FaSearch } from 'react-icons/fa';
 import { IoMdArrowDropup, IoMdArrowDropdown } from 'react-icons/io';
 import { i18n } from '../../translate/i18n';
 import { GlobalContext } from '../../Contexts/GlobalContext';
+import { mainGenres } from './mainGenres.js';
 const axios = require('axios').default;
 
 function SearchBar() {
 
-    const {apiURL} = useContext(GlobalContext);
+    const { apiURL } = useContext(GlobalContext);
     const [term, setTerm] = useState("");
     const [moreGenres, setMoreGenres] = useState(false);
-    const [genres, setGenres] = useState(null);
+    const [genres, setGenres] = useState(mainGenres);
     const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
     function setSearchTerm(term) {
