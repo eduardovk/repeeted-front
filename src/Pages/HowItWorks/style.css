@@ -2,3 +2,18 @@
     font-size: 1.1em;
     text-align: justify;
 }
+
+.text-img{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.text-img img{
+    max-width: 100%;
+}
+
+.text-img span{
+    font-size: .8em;
+    font-style: italic;
+}
