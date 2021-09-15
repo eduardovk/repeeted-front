@@ -2,7 +2,6 @@ import React, { useEffect, useContext } from "react";
 import "./style.css";
 import "animate.css";
 import { Link } from "react-router-dom";
-import ProfilePic from '../../images/profile.jpg';
 import { scrollToTop } from '../../Helpers';
 import { GoLinkExternal } from 'react-icons/go';
 import { i18n } from '../../translate/i18n';
@@ -11,7 +10,8 @@ import { GlobalContext } from '../../Contexts/GlobalContext';
 
 function About() {
 
-    const {websiteName} = useContext(GlobalContext);
+    const { websiteName, lang } = useContext(GlobalContext);
+    const S3URL = lang === 'pt-BR' ? process.env.REACT_APP_S3_SA_URL : process.env.REACT_APP_S3_US_URL;
 
     useEffect(() => {
         scrollToTop();
@@ -20,7 +20,7 @@ function About() {
     return (
         <div className="container" id="about-container">
             <div id="author-container" className="shadow">
-                <img id="author-pic" alt="Author" src={ProfilePic} />
+                <img id="author-pic" alt="Author" src={S3URL + "profile.jpg"} />
                 <div id="author-info">
                     <p style={{ fontSize: "1.3em", fontWeight: 700 }}>Eduardo V. Kuhn <span style={{ color: "grey" }}>({i18n.t('about.author')})</span></p><hr />
                     <p style={{ fontSize: "1.1em", fontWeight: 600 }}><i>Web Developer</i></p>
@@ -32,9 +32,9 @@ function About() {
             </div>
             <article id="about-text">
                 <h2>{i18n.t('about.what')}</h2>
-                <p>{i18n.t('about.whatParagraph', {websiteName: websiteName})}</p>
+                <p>{i18n.t('about.whatParagraph', { websiteName: websiteName })}</p>
                 <h2>{i18n.t('about.why')}</h2>
-                <p>{i18n.t('about.whyParagraph', {websiteName: websiteName})}</p>
+                <p>{i18n.t('about.whyParagraph', { websiteName: websiteName })}</p>
                 <p>{i18n.t('about.whyParagraph2')}</p>
                 <p>{i18n.t('about.whyParagraph3')}</p>
                 <h2>{i18n.t('about.how')}</h2>
