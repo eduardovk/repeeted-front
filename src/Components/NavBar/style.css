@@ -63,11 +63,17 @@ nav{
     cursor: pointer;
 }
 
-.navbar-logo, .navbar-list li{
+.navbar-list li{
     padding: 5px;
     margin: 5px;
     cursor: pointer;
     transition: 0.2s;
+}
+
+.navbar-logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .navbar-list li:hover, .mobile-nav span:hover a{

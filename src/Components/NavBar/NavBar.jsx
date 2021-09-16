@@ -7,6 +7,7 @@ import MessageModal from '../MessageModal/MessageModal';
 import DonateModal from '../DonateModal';
 import BRFlag from '../../images/br_flag.png';
 import USFlag from '../../images/us_flag.png';
+import MiniLogo from '../../images/RepeetedMiniLogo.png';
 import { i18n } from '../../translate/i18n';
 
 function NavBar({ changeLang }) {
@@ -18,7 +19,7 @@ function NavBar({ changeLang }) {
     return (
         <nav>
             <div className="navbar">
-                <div className="navbar-logo">Logo</div>
+                <div className="navbar-logo"><Link to="/"><img src={MiniLogo} alt="logo"/></Link></div>
                 <ul className="navbar-list">
                     <Link to="/"><li>Home</li></Link>
                     <Link to="/about"><li>{i18n.t('nav.about')}</li></Link>
