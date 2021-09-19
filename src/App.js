@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
@@ -19,6 +19,8 @@ import HowItWorks from './Pages/HowItWorks/HowItWorks';
 import About from './Pages/About/About';
 import { GlobalContext } from './Contexts/GlobalContext';
 import ReactGa from 'react-ga';
+ReactGa.initialize(process.env.REACT_APP_ANALYTICS_KEY);
+ReactGa.pageview(window.location.pathname);
 
 function App() {
 
@@ -35,10 +37,6 @@ function App() {
     window.location = window.location.href;
   }
 
-  useEffect(() => {
-    ReactGa.initialize(process.env.REACT_APP_ANALYTICS_KEY);
-    ReactGa.pageview(window.location.pathname);
-  }, []);
 
   return (
     <div className="App" style={{ backgroundImage: `url(${S3URL}background.jpg)` }}>
