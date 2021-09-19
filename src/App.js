@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
@@ -18,6 +18,7 @@ import NameList from './Pages/NameList/NameList';
 import HowItWorks from './Pages/HowItWorks/HowItWorks';
 import About from './Pages/About/About';
 import { GlobalContext } from './Contexts/GlobalContext';
+import ReactGa from 'react-ga';
 
 function App() {
 
@@ -34,8 +35,13 @@ function App() {
     window.location = window.location.href;
   }
 
+  useEffect(() => {
+    ReactGa.initialize(process.env.REACT_APP_ANALYTICS_KEY);
+    ReactGa.pageview(window.location.pathname);
+  }, []);
+
   return (
-    <div className="App" style={{backgroundImage: `url(${S3URL}background.jpg)`}}>
+    <div className="App" style={{ backgroundImage: `url(${S3URL}background.jpg)` }}>
       <Router>
         <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName, apiURL: apiURL }}>
           <NavBar changeLang={changeLang} />
