@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import SearchBar from './Components/SearchBar';
 import BackToTop from './Components/BackToTop';
 import {
-  BrowserRouter as Router,
+  Router,
   Switch,
   Route,
 } from "react-router-dom";
@@ -18,11 +18,19 @@ import NameList from './Pages/NameList/NameList';
 import HowItWorks from './Pages/HowItWorks/HowItWorks';
 import About from './Pages/About/About';
 import { GlobalContext } from './Contexts/GlobalContext';
-import ReactGa from 'react-ga';
-ReactGa.initialize(process.env.REACT_APP_ANALYTICS_KEY);
-ReactGa.pageview(window.location.pathname);
+import ReactGA from 'react-ga';
+
+ReactGA.initialize(process.env.REACT_APP_ANALYTICS_KEY);
+const history = require("history").createBrowserHistory();
+history.listen((location, action) => {
+  ReactGA.pageview(location.pathname + location.search);
+});
 
 function App() {
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [])
 
   const I18N_STORAGE_KEY = 'i18nextLng';
   const [lang] = useState(localStorage.getItem(I18N_STORAGE_KEY));
@@ -40,7 +48,7 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundImage: `url(${S3URL}background.jpg)` }}>
-      <Router>
+      <Router history={history}>
         <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName, apiURL: apiURL }}>
           <NavBar changeLang={changeLang} />
           <div className="main">

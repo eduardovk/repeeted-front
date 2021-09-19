@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { i18n } from '../../translate/i18n';
 import { GlobalContext } from '../../Contexts/GlobalContext';
-import ReactGa from 'react-ga';
+import ReactGA from 'react-ga';
 
 function PaypalButton() {
 
@@ -13,7 +13,7 @@ function PaypalButton() {
     }, [currency, lang]);
 
     const handleClick = () => {
-        ReactGa.event({
+        ReactGA.event({
             category: 'Button',
             action: 'Paypal button click'
         });
