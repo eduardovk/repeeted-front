@@ -32,12 +32,13 @@ nav{
     text-align: center;
     padding-top: 4px;
     margin: 1px 5px 5px 5px;
-    cursor: pointer;
+    /* cursor: pointer; */
     border-top: 1px solid #95c5ff;
 }
 
-.mobile-nav span:hover{
+.mobile-link:hover{
     color: #0c315e !important;
+    cursor: pointer;
 }
 
 .navbar-list{
@@ -76,7 +77,7 @@ nav{
     cursor: pointer;
 }
 
-.navbar-list li:hover, .mobile-nav span:hover a{
+.navbar-list li:hover{
     color: #0c315e !important;
 }
 

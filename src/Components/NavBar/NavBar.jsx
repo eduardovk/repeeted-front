@@ -35,11 +35,11 @@ function NavBar({ changeLang }) {
                     <span onClick={() => setShowMenu(!showMenu)}><GiHamburgerMenu size="1.8em" /></span>
                 </div>
                 <div className="mobile-nav" style={showMenu ? ({ display: "flex" }) : ({ display: "none" })}>
-                    <span><Link to="/">Home</Link></span>
-                    <span><Link to="/about">{i18n.t('nav.about')}</Link></span>
-                    <span><Link to="/how-it-works">{i18n.t('nav.howItWorks')}</Link></span>
-                    <span onClick={() => { setOpenMsgModal(true) }}>{i18n.t('nav.contact')}</span>
-                    <span style={{ color: "#ffc145" }} onClick={() => { setOpenDonateModal(true) }}>{i18n.t('nav.donate')}</span>
+                    <span><Link to="/"><span className="mobile-link" onClick={()=>{setShowMenu(false)}}>Home</span></Link></span>
+                    <span><Link to="/about"><span className="mobile-link" onClick={()=>{setShowMenu(false)}}>{i18n.t('nav.about')}</span></Link></span>
+                    <span><Link to="/how-it-works"><span className="mobile-link" onClick={()=>{setShowMenu(false)}}>{i18n.t('nav.howItWorks')}</span></Link></span>
+                    <span><span className="mobile-link" onClick={() => { setOpenMsgModal(true); setShowMenu(false); }}>{i18n.t('nav.contact')}</span></span>
+                    <span><span style={{ color: "#ffc145" }} className="mobile-link" onClick={() => { setOpenDonateModal(true); setShowMenu(false); }}>{i18n.t('nav.donate')}</span></span>
                     <span className="lang-btn" style={{ marginLeft: "10px" }} onClick={changeLang}>
                         {lang === 'pt-BR' ? ('PT') : ('EN')}<img src={lang === 'pt-BR' ? (BRFlag) : (USFlag)} className="lang-flag"
                             alt={lang === 'pt-BR' ? ('Bandeira do Brasil') : ('US Flag')} />
