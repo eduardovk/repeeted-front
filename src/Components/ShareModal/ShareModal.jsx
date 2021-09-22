@@ -39,12 +39,12 @@ function ShareModal({ words, name, open, setOpen }) {
     }
 
     const getWhatsappUrl = () => {
-        let msg = getTwitterMsg() + url;
+        let msg = getTwitterMsg() +' '+ url;
         return `https://api.whatsapp.com/send?text=${msg}`;
     }
 
     const getTelegramUrl = () => {
-        let msg = getTwitterMsg() + url;
+        let msg = getTwitterMsg() +' '+ url;
         return `https://t.me/share/url?url=${url}&text=${msg}`;
     }
 
@@ -57,7 +57,7 @@ function ShareModal({ words, name, open, setOpen }) {
                 <div id="modal-share">
                     <Tippy content="Twitter">
                         <a className="no-decor twitter-icon" target="_blank" rel="noopener noreferrer"
-                            href={`https://twitter.com/share?url=${url}&text=${getTwitterMsg()}&hashtags=${nameTag},Repetician`}>
+                            href={`https://twitter.com/share?url=${url}&text=${getTwitterMsg()}&hashtags=${nameTag},Repeeted`}>
                             <AiFillTwitterCircle size={40} />
                         </a>
                     </Tippy>
