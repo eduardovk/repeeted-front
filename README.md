@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Repeeted
+ by Eduardo Vicenzi Kuhn
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### This project consists of three main repositories:
 
-## Available Scripts
+#### [Repeeted Front-end (current)](https://github.com/eduardovk/repeeted-front)
+#### [Repeeted API](https://github.com/eduardovk/repeeted-api)
+#### [Repeeted Engine](https://github.com/eduardovk/repeeted-engine)
 
-In the project directory, you can run:
+#### And, of course, the Repeeted website: [repeeted.com](https://www.repeeted.com/)
 
-### `npm start`
+## What is it?
+Repeeted is a website that allows you to find out which words are most repeated by an artist or band, currently with more than 20 thousand artists in its database, in Portuguese, English and Spanish.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Why?
+Repeeted is the result of an idea that came up during an unpretentious conversation, in which I was discussing with a friend what the outcome would be if we could sum up a band through the most repeated words in their lyrics.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+After further evaluating the idea of building an application that would fulfill this purpose, some challenges proved to be interesting. It would be a good opportunity to learn more about some technologies, such as web scrapping, REST, React, Node.js, and others.
 
-### `npm test`
+In short, this is a vacation project motivated by the joy of learning new technologies and the fun of programming solutions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How?
 
-### `npm run build`
+![alt text](https://raw.githubusercontent.com/eduardovk/repeeted-front/main/git_images/RepeetedStack.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When the idea came up and possible solutions to the problem were put on the table, a preliminary study of APIs brought me to Genius, a huge database of artists, songs and lyrics. Through the API they provide, it is possible to fetch the list of songs of an artist and the respective URLs of the lyrics of each song (the Genius API does not return the lyrics themselves), hosted on the Genius site itself. From then on, it would be a long process of scrapping the HTML pages to obtain and process the most repeated words in the artists' lyrics, respecting request limits and other barriers.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+But before starting the Genius API query process, it was necessary to already have a list of artists (identified by name) to use as a query parameter. This problem was addressed through a series of scripts that crawls through different music websites, scrapping lists of the most popular artists of the moment, as well as a series of queries to music streaming service APIs and other databases.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The last step to populate the database was to obtain the music genres of each artist, thus making it possible to identify related artists. For this, the Spotify API's artist information query was used.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![alt text](https://raw.githubusercontent.com/eduardovk/repeeted-front/main/git_images/RepeetedDiagram.jpg)
