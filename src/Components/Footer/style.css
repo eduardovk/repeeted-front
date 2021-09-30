@@ -15,13 +15,12 @@ footer{
 
 #footer-icons span{
     margin: 5px;
-    color: #b0c5d8;
-    cursor: pointer;
+    color: #b0c5d8 !important;
     transition: 0.2s;
 }
 
-#footer-icons span:hover{
-    color: #ffc145;
+#footer-icons a:hover{
+    color: #ffc145 !important;
 }
 
 #footer-links{
@@ -46,6 +45,12 @@ footer{
 
 #footer-links a, #footer-links a:visited{
     text-decoration: none;
+}
+
+#footer-icons a, #footer-icons a:visited{
+    text-decoration: none;
+    color: #b0c5d8;
+    
 }
 
 #footer-donate{

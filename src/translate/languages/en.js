@@ -33,7 +33,7 @@ const messages = {
             },
             footer: {
                 disclaimer1: 'This website does',
-                disclaimer2: 'display ads, neither utilizes cookies nor trackers!',
+                disclaimer2: 'display ads or receive sponsorship!',
                 donation1: 'Consider making a',
                 donation2: 'to help me keep it running:'
             },
@@ -90,8 +90,8 @@ const messages = {
                 title: 'Make a donation',
                 line1: 'This website:',
                 line2: 'display ads.',
-                line3: 'uses cookies.',
-                line4: 'uses trackers.',
+                line3: 'sell products.',
+                line4: 'receive sponsorship.',
                 donate1: 'Therefore, consider making a',
                 donate2: 'to help me keep it running!',
                 donate3: 'Just click on the button above to make your donation via'

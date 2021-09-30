@@ -13,9 +13,9 @@ function Footer() {
     return (
         <footer>
             <div id="footer-icons">
-                <span><AiFillInstagram size={30} /></span>
-                <span><AiFillTwitterCircle size={30} /></span>
-                <span><AiFillGithub size={30} /></span>
+                <span><a className="no-decor" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/repeeted_/"><AiFillInstagram size={30} /></a></span>
+                <span><a className="no-decor" rel="noopener noreferrer" target="_blank" href="https://twitter.com/repeeted_"><AiFillTwitterCircle size={30} /></a></span>
+                <span><a className="no-decor" rel="noopener noreferrer" target="_blank" href="https://github.com/eduardovk/repeeted-front"><AiFillGithub size={30} /></a></span>
             </div>
             <div id="footer-links">
                 <Link to="/"><span>Home</span></Link>

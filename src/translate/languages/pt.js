@@ -33,7 +33,7 @@ const messages = {
             },
             footer: {
                 disclaimer1: 'Este site',
-                disclaimer2: 'exibe propagandas e nem utiliza cookies ou rastreadores!',
+                disclaimer2: 'exibe propagandas e nem recebe patrocínio!',
                 donation1: 'Considere fazer uma',
                 donation2: 'para me ajudar a mantê-lo no ar:'
             },
@@ -90,8 +90,8 @@ const messages = {
                 title: 'Faça uma doação',
                 line1: 'Este site:',
                 line2: 'exibe propagandas.',
-                line3: 'utiliza cookies.',
-                line4: 'utiliza rastreadores.',
+                line3: 'comercializa produtos.',
+                line4: 'recebe patrocínio.',
                 donate1: 'Portanto, considere fazer uma',
                 donate2: 'para me ajudar a mantê-lo no ar!',
                 donate3: 'Basta clicar no botão acima para fazer sua doação via'
