@@ -12,7 +12,10 @@ const messages = {
                 analyzedArtists: 'Artistas analisados',
                 name: 'Nome',
                 loadingPage: 'Carregando a página',
-                share: 'Compartilhar'
+                share: 'Compartilhar',
+                wordcloud: 'Nuvem de palavras',
+                barChart: 'Barras',
+                advanced: 'Avançado'
             },
             buttons: {
                 paypalTitle: 'PayPal - A maneira mais segura e fácil de fazer pagamentos online!',
