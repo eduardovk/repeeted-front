@@ -3,9 +3,9 @@
 
 #### This project consists of three main repositories:
 
-#### [Repeeted Front-end (current)](https://github.com/eduardovk/repeeted-front)
-#### [Repeeted API](https://github.com/eduardovk/repeeted-api)
-#### [Repeeted Engine](https://github.com/eduardovk/repeeted-engine)
+#### [Repeeted Front-end](https://github.com/eduardovk/repeeted-front)
+#### [Repeeted API (currently private)](https://github.com/eduardovk/repeeted-api)
+#### [Repeeted Engine (currently private)](https://github.com/eduardovk/repeeted-engine)
 
 #### And, of course, the Repeeted website: [repeeted.com](https://www.repeeted.com/)
 
