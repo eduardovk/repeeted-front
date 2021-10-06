@@ -15,7 +15,10 @@ const messages = {
                 share: 'Share',
                 wordcloud: 'Wordcloud',
                 barChart: 'Bar Chart',
-                advanced: 'Advanced'
+                advanced: 'Advanced',
+                disclaimer1: 'Not 100% accurate (improvements on the way).',
+                disclaimer2: 'Let me know',
+                disclaimer3: 'in case you found any bugs!'
             },
             buttons: {
                 paypalTitle: 'PayPal - The safer, easier way to pay online!',

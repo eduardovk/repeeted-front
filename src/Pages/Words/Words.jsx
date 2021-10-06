@@ -58,9 +58,9 @@ function Words() {
             {loading ? (<PageLoading />) : (
                 <div className="container">
                     <ArtistInfo artist={artist} total_songs={songsData.total_songs} total_words={songsData.total_words} />
-                    <h2>{i18n.t('wordsPage.mostRepeated')} {artist.name}</h2>
+                    <h2>*{i18n.t('wordsPage.mostRepeated')} {artist.name}</h2>
                     <div className="shadow animate__animated animate__backInUp">
-                        <WordCloud words={artist.words} artist={artist.name}/>
+                        <WordCloud words={artist.words} artist={artist.name} id_genius={artist.id_genius} />
                         <Tags words={artist.words} name={artist.name} id_genius={artist.id_genius} genres={genres} />
                         <Accordion total_songs={songsData.total_songs} songs={songs} />
                     </div>

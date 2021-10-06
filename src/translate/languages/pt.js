@@ -15,7 +15,10 @@ const messages = {
                 share: 'Compartilhar',
                 wordcloud: 'Nuvem de palavras',
                 barChart: 'Barras',
-                advanced: 'Avançado'
+                advanced: 'Avançado',
+                disclaimer1: 'Precisão não 100% garantida (melhorias a caminho).',
+                disclaimer2: 'Informe',
+                disclaimer3: 'caso tenha encontrado algum problema!'
             },
             buttons: {
                 paypalTitle: 'PayPal - A maneira mais segura e fácil de fazer pagamentos online!',

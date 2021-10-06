@@ -6,11 +6,16 @@ import "tippy.js/animations/scale.css";
 import Loading from '../../images/loading.svg';
 import { i18n } from '../../translate/i18n';
 import Chart from "react-google-charts";
+import { IoIosClose } from 'react-icons/io';
+import MessageModal from '../MessageModal/MessageModal';
 
-function WordCloud({ words, artist }) {
+function WordCloud({ words, artist, id_genius }) {
 
     const [showWordCloud, setShowWordCloud] = useState(false);
     const [showBarChart, setShowBarChart] = useState(localStorage.getItem('showBarChart'));
+    const [openMsgModal, setOpenMsgModal] = useState(false);
+    const [hiddenDisclaimer, setHiddenDisclaimer] = useState(localStorage.getItem('hiddenDisclaimer'));
+
 
     const options = {
         rotations: 0,
@@ -24,7 +29,12 @@ function WordCloud({ words, artist }) {
     function changeChart(value) {
         localStorage.setItem('showBarChart', value);
         setShowBarChart(value);
-      }
+    }
+
+    function hideDisclaimer() {
+        localStorage.setItem('hiddenDisclaimer', 'true');
+        setHiddenDisclaimer('true');
+    }
 
     const wordArr = words.map(n => [n.text, n.value, '#13355d', n.value]).slice(0, 50);
 
@@ -77,9 +87,23 @@ function WordCloud({ words, artist }) {
                                     rootProps={{ 'data-testid': '6' }}
                                 />
                             </div>
-                        ) : (<ReactWordcloud words={words} options={options} />)}
+                        ) : (<>
+                            <ReactWordcloud words={words} options={options} />
+                            {hiddenDisclaimer !== 'true' ? (<div id="disclaimer-container">
+                                <span id="disclaimer">
+                                    <b>*</b> {i18n.t('words.disclaimer1')} <span id="disclaimer-click" onClick={() => { setOpenMsgModal(true) }}><u>{i18n.t('words.disclaimer2')}</u></span> {i18n.t('words.disclaimer3')}
+                                </span>
+                                <span id="disclaimer-close" onClick={hideDisclaimer}>
+                                    <IoIosClose size={25} />
+                                </span>
+                            </div>) : (<></>)}
+
+
+                        </>)}
                     </>
                 )}
+                <MessageModal id_genius={id_genius} modalTitle={i18n.t('messageModal.reportTitle')}
+                    msgPlaceholder={i18n.t('messageModal.reportPlaceholder')} open={openMsgModal} setOpen={setOpenMsgModal} />
             </div>
         </>
     );

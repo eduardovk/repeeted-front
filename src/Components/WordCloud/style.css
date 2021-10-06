@@ -42,3 +42,46 @@
     align-items: flex-start;
     width: 95%;
 }
+
+#disclaimer-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cf6061;
+    font-size: 0.8em;
+    padding: 5px 17px 5px 17px;
+    margin: 5px 0 10px 0;
+    color: white;
+    position: relative;
+
+}
+
+#disclaimer{
+    padding:0px 10px 0px 5px;
+}
+
+#disclaimer-close{
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    line-height: 50%;
+    font-size: 1em;
+    color: #770d0e;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#disclaimer-close:hover{
+    color: #ffe8e8;
+}
+
+#disclaimer-click{
+    font-weight: 700;
+    color: #ffe8e8;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#disclaimer-click:hover{
+    color: #661616;
+}
