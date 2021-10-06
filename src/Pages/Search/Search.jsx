@@ -33,7 +33,7 @@ function Search() {
     return (
         <div className="container">
             <h3 id="searching-for">{i18n.t('search.searching')} '{term}'...</h3>
-            <ArtistCards title={i18n.t('search.results')} loading={loading} artists={artists} />
+            <ArtistCards title={i18n.t('search.results')} loading={loading} artists={artists} didntFindMessage={true} />
         </div>
     );
 }

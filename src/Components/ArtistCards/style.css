@@ -56,6 +56,21 @@
     color: #b92941 !important;
 }
 
+#didnt-find{
+    text-align: center;
+}
+
+#message-me{
+    font-weight: 700;
+    cursor: pointer;
+    color: #14365e;
+    transition: .2s;
+}
+
+#message-me:hover{
+    color: #769bc2;
+}
+
 #loading-box{
     min-height: 400px;
     display: flex;

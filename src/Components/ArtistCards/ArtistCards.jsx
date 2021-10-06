@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import "./style.css";
 import Loading from '../../images/loading.svg';
 import Blank from '../../images/blank.png';
@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import { i18n } from '../../translate/i18n';
 import { GlobalContext } from '../../Contexts/GlobalContext';
 import { generateImgURL } from '../../Helpers';
+import MessageModal from '../MessageModal/MessageModal';
 
 function ArtistCards(props) {
 
     const { lang } = useContext(GlobalContext);
+    const [openMsgModal, setOpenMsgModal] = useState(false);
 
     const ArtistCard = ({ artist }) => {
         return (
@@ -39,7 +41,14 @@ function ArtistCards(props) {
                                 <ArtistCard key={idx} artist={artist} />
                             ))}
                         </>
-                    ) : (<h2 id="no-result">{i18n.t('artistCard.noResults')}</h2>)}</>)}
+                    ) : (<h2 id="no-result">{i18n.t('artistCard.noResults')}</h2>)}
+                    {props.didntFindMessage ? (<span id="didnt-find"><b>{i18n.t('artistCard.didntFind1')}</b> <br />
+                        <span id="message-me" onClick={() => { setOpenMsgModal(true) }}>{i18n.t('artistCard.didntFind2')} </span>
+                        {i18n.t('artistCard.didntFind3')}
+                    </span>) : (<></>)}
+                </>)}
+                <MessageModal id_genius={null} modalTitle={i18n.t('messageModal.contactTitle')}
+                    msgPlaceholder={i18n.t('messageModal.contactPlaceholder')} open={openMsgModal} setOpen={setOpenMsgModal} />
             </div>
         </>
     );

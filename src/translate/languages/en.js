@@ -87,7 +87,10 @@ const messages = {
                 relatedArtists: 'Related artists'
             },
             artistCard: {
-                noResults: 'No results found.'
+                noResults: 'No results found.',
+                didntFind1: `Didn't find what you were looking for?`,
+                didntFind2: 'Send me a message',
+                didntFind3: 'telling me the band name so I can enter it manually!'
             },
             donateModal: {
                 title: 'Make a donation',
