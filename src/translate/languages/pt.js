@@ -104,6 +104,14 @@ const messages = {
             },
             shareModal: {
                 twitterBody: 'Estas são as palavras mais repetidas por {{name}}. Confira mais em:'
+            },
+            mainModal: {
+                goodNews: 'A boa notícia ',
+                badNews: 'A má notícia ',
+                text1: 'é que este website tem sido amplamente compartilhado nos últimos dias e isto gerou um enorme tráfego no servidor.',
+                improvements: ' Melhorias ',
+                text2: 'estão sendo feitas continuamente com base nas sugestões que ando recebendo.',
+                text3: 'é que os custos de hospedagem estão muito elevados. Como este website não exibe propagandas, está ficando difícil mantê-lo no ar.',
             }
         }
     }

@@ -104,6 +104,14 @@ const messages = {
             },
             shareModal: {
                 twitterBody: 'These are the most repeated words by {{name}}. Check out more at:'
+            },
+            mainModal: {
+                goodNews: 'The good news ',
+                badNews: 'The bad news ',
+                text1: `is that this website has been widely shared over the past few days and this has generated a huge server traffic. `,
+                improvements: ' Improvements ',
+                text2: `are continually being made based on the suggestions I'm receiving.`,
+                text3: `is that hosting costs are getting very high. Since this website doesn't display advertisements, it's starting to become very expensive to keep it running.`,
             }
         }
     }
