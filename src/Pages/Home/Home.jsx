@@ -7,6 +7,8 @@ import { FaSearch } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { scrollToTop } from '../../Helpers';
 import { i18n } from '../../translate/i18n';
+import InstaLogo from '../../images/instagram.png';
+import TwitterLogo from '../../images/twitter.png';
 
 function Home() {
 
@@ -53,7 +55,7 @@ function Home() {
             <div className="example-artist">
                 <Link to={"/" + props.slug}>
                     <div className="example-white"></div>
-                    <img src={S3URL+props.img} alt={props.name} loading="lazy" />
+                    <img src={S3URL + props.img} alt={props.name} loading="lazy" />
                     <div className="example-footer">{i18n.t('home.seeMore')}&nbsp;</div>
                 </Link>
             </div>
@@ -62,7 +64,7 @@ function Home() {
 
     return (
         <div id="homepage-container">
-            <div id="numbers-info" style={{backgroundImage: `url(${S3URL}mic-pattern.jpg)`}}>
+            <div id="numbers-info" style={{ backgroundImage: `url(${S3URL}mic-pattern-4.jpg)` }}>
                 <h1>{i18n.t('home.discover')}</h1>
                 <div id="total-words">
                     <h2 className="animate__animated animate__flipInX">{total.words}</h2>
@@ -77,6 +79,19 @@ function Home() {
                         <h2 className="animate__animated animate__flipInX">{total.songs}</h2>
                         <h3>{i18n.t('words.analyzedSongs').toUpperCase()}</h3>
                     </div>
+                </div>
+                <div className="follow-us">
+                    <p>{i18n.t('home.followUs').toUpperCase()}</p>
+                    <span>
+                        <a className="no-decor" rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/repeeted_/">
+                            <img className="animate_animated animate__bounceIn" src={InstaLogo} alt="instagram logo" />
+                        </a>
+                    </span>
+                    <span>
+                        <a className="no-decor" rel="noopener noreferrer" target="_blank" href="https://twitter.com/repeeted_">
+                            <img className="animate animate__bounceIn" src={TwitterLogo} alt="twitter logo" />
+                        </a>
+                    </span>
                 </div>
             </div>
             <div id="examples-artists">

@@ -62,7 +62,8 @@ const messages = {
             home: {
                 seeMore: 'Ver mais >',
                 discover: 'Descubra as palavras mais repetidas por seu artista/banda favorito!',
-                popular: 'Populares'
+                popular: 'Populares',
+                followUs: 'Posts novos todos os dias em:'
             },
             howItWorks: {
                 stackCaption: 'Stack Tecnológico',

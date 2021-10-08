@@ -62,7 +62,8 @@ const messages = {
             home: {
                 seeMore: 'See more >',
                 discover: 'Discover the most repeated words by your favorite artist/band!',
-                popular: 'Popular'
+                popular: 'Popular',
+                followUs: 'New posts everyday at:'
             },
             howItWorks: {
                 stackCaption: 'Tech Stack',

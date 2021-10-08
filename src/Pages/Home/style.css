@@ -11,6 +11,7 @@
     font-weight: 700;
     color: #424242;
     padding: 0px 10px 0px 10px;
+    margin: 5px 0 0 0;
 }
 
 #total-words{
@@ -40,7 +41,7 @@
     display: flex;
     justify-content: center;
     font-family: "Oswald";
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     flex-wrap: wrap;
 }
 
@@ -52,7 +53,44 @@
 .amounts-info h2{
     font-size: 3em;
     color: #191718;
-    margin-top: 5px;
+    margin: 0px;
+}
+
+.follow-us{
+    margin: 15px 0 7px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: "Oswald";
+    font-size: .8em;
+    font-weight: bold;
+    color: #646464;
+}
+
+.follow-us p{
+    margin: 0;
+    flex-basis: 100%;
+}
+
+.follow-us span{
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.follow-us img{
+    width: 100%;
+    transition: .2s;
+}
+
+.follow-us img:hover{
+    width: 85%;
 }
 
 #examples-artists{
@@ -159,6 +197,7 @@
 @media (min-width: 416px){
     #total-words h3{
         font-size: 1.5em;
+        margin-top: -10px;
     }
     #home-input{
         font-size: 1.2em;
