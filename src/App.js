@@ -56,7 +56,7 @@ function App() {
 
   const websiteName = process.env.REACT_APP_WEBSITE_NAME;
   const apiURL = process.env.REACT_APP_API_URL;
-  const wordFilter = process.env.REACT_APP_WORD_FILTER.split(',');
+  const wordsFilter = process.env.REACT_APP_WORDS_FILTER.split(',');
 
   function changeLang() {
     let currentLang = localStorage.getItem(I18N_STORAGE_KEY);
@@ -68,7 +68,7 @@ function App() {
   return (
     <div className="App" style={{ backgroundImage: `url(${S3URL}background.jpg)` }}>
       <Router history={history}>
-        <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName, apiURL: apiURL, wordFilter: wordFilter }}>
+        <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName, apiURL: apiURL, wordsFilter: wordsFilter }}>
           <NavBar changeLang={changeLang} />
           <div className="main">
             <SearchBar />
