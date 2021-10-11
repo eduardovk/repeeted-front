@@ -14,6 +14,7 @@ const axios = require('axios').default;
 function Words() {
     const { slug } = useParams();
     const { apiURL } = useContext(GlobalContext);
+    const { wordFilter } = useContext(GlobalContext);
     const [loading, setLoading] = useState(true);
     const [loadingRelated, setLoadingRelated] = useState(true);
     const [artist, setArtist] = useState(null);
@@ -30,6 +31,7 @@ function Words() {
             axios.get(`${apiURL}/words/` + slug).then(res => {
                 if (res.data && res.data.artist) {
                     res.data.artist.slug = slug;
+                    res.data.artist.words = res.data.artist.words.filter(w => !wordFilter.includes(w.text.toLowerCase()));
                     setArtist(res.data.artist);
                     setSongs(res.data.songs);
                     setGenres(res.data.genres);
@@ -51,7 +53,7 @@ function Words() {
                 }
             }).catch(e => console.log(e));
         }
-    }, [slug, apiURL]);
+    }, [slug, apiURL, wordFilter]);
 
     return (
         <>
