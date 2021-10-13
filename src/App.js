@@ -40,7 +40,7 @@ function App() {
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
     if (localStorage.getItem('closedMainModal') !== 'true') {
-      setOpenMainModal(true);
+      if (process.env.REACT_APP_MAIN_MODAL === "true") setOpenMainModal(true);
     }
   }, [])
 
@@ -57,6 +57,7 @@ function App() {
   const websiteName = process.env.REACT_APP_WEBSITE_NAME;
   const apiURL = process.env.REACT_APP_API_URL;
   const wordsFilter = process.env.REACT_APP_WORDS_FILTER.split(',');
+  const showAds = process.env.REACT_APP_SHOW_ADS;
 
   function changeLang() {
     let currentLang = localStorage.getItem(I18N_STORAGE_KEY);
@@ -68,7 +69,7 @@ function App() {
   return (
     <div className="App" style={{ backgroundImage: `url(${S3URL}background.jpg)` }}>
       <Router history={history}>
-        <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName, apiURL: apiURL, wordsFilter: wordsFilter }}>
+        <GlobalContext.Provider value={{ lang: lang, websiteName: websiteName, apiURL: apiURL, wordsFilter: wordsFilter, showAds: showAds }}>
           <NavBar changeLang={changeLang} />
           <div className="main">
             <SearchBar />

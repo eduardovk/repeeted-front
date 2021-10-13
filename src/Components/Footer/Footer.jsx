@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import "./style.css";
 import { AiFillTwitterCircle, AiFillInstagram, AiFillGithub } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { i18n } from '../../translate/i18n';
 import MessageModal from '../MessageModal/MessageModal';
 import PaypalButton from '../PaypalButton/PaypalButton';
+import { GlobalContext } from '../../Contexts/GlobalContext';
 
 function Footer() {
 
     const [openMsgModal, setOpenMsgModal] = useState(false);
+    const { showAds } = useContext(GlobalContext);
 
     return (
         <footer>
@@ -24,7 +26,11 @@ function Footer() {
                 <div><span onClick={() => { setOpenMsgModal(true) }}>{i18n.t('nav.contact')}</span></div>
             </div>
             <div id="footer-donate">
-                <span style={{ fontSize: '.8em' }}>{i18n.t('footer.disclaimer1')} <b>{i18n.t('words.not')}</b> {i18n.t('footer.disclaimer2')}</span><br />
+                <span style={{ fontSize: '.8em' }}>
+                    {showAds === "true" ?
+                        (<>{i18n.t('donateModal.highCosts')}</>) :
+                        (<>{i18n.t('footer.disclaimer1')} <b>{i18n.t('words.not')}</b> {i18n.t('footer.disclaimer2')}</>)}
+                </span><br />
                 <span>{i18n.t('footer.donation1')} <b><span style={{ color: "#ffc145" }}>{i18n.t('words.donation')}</span></b> {i18n.t('footer.donation2')}</span>
                 <PaypalButton />
                 <MessageModal id_genius={null} modalTitle={i18n.t('messageModal.contactTitle')}

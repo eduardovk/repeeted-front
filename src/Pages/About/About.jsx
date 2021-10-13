@@ -10,7 +10,7 @@ import { GlobalContext } from '../../Contexts/GlobalContext';
 
 function About() {
 
-    const { websiteName, lang } = useContext(GlobalContext);
+    const { websiteName, lang, showAds } = useContext(GlobalContext);
     const S3URL = lang === 'pt-BR' ? process.env.REACT_APP_S3_SA_URL : process.env.REACT_APP_S3_US_URL;
 
     useEffect(() => {
@@ -41,7 +41,9 @@ function About() {
                 <p>{i18n.t('about.howParagraph')} <Link className="no-decor" to="/how-it-works"><span style={{ color: "#0c315e", fontSize: ".7em" }}><b>{i18n.t('nav.howItWorks').toUpperCase()}</b></span></Link>.</p>
             </article>
             <article id="about-donate">
-                <p><i>{i18n.t('about.donation1')} <span style={{ color: "#b17b0f" }}><b>{i18n.t('words.donation')}</b></span> {i18n.t('about.donation2')} <b>{i18n.t('words.thankYou')}</b></i></p>
+                <p><i>
+                    {showAds === "true" ? i18n.t('donateModal.highCosts') : i18n.t('about.donation1')}
+                    {i18n.t('about.donation2')} <span style={{ color: "#b17b0f" }}><b>{i18n.t('words.donation')}</b></span> {i18n.t('about.donation3')} <b>{i18n.t('words.thankYou')}</b></i></p>
             </article>
             <div id="about-donate-btn">
                 <PaypalButton />

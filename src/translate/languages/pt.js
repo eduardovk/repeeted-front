@@ -53,8 +53,9 @@ const messages = {
                 whyParagraph3: 'Resumindo, este é um projeto de férias motivado pelo aprendizado de novas tecnologias e pela diversão de programar soluções.',
                 how: 'Como?',
                 howParagraph: 'Se você deseja saber mais sobre o funcionamento desta aplicação, confira a página',
-                donation1: 'Este site não exibe propagandas nem comercializa produtos. Portanto, considere fazer uma',
-                donation2: 'para me ajudar a mantê-lo no ar, clicando no botão abaixo.',
+                donation1: 'Este site não exibe propagandas nem comercializa produtos.',
+                donation2: ' Portanto, considere fazer uma',
+                donation3: 'para me ajudar a mantê-lo no ar, clicando no botão abaixo.',
             },
             genres: {
                 allGenres: 'Todos os gêneros',
@@ -104,7 +105,8 @@ const messages = {
                 line4: 'recebe patrocínio.',
                 donate1: 'Portanto, considere fazer uma',
                 donate2: 'para me ajudar a mantê-lo no ar!',
-                donate3: 'Basta clicar no botão acima para fazer sua doação via'
+                donate3: 'Basta clicar no botão acima para fazer sua doação via',
+                highCosts: 'Manter este site requer muito tempo e dedicação, e gera custos de servidor.'
             },
             shareModal: {
                 twitterBody: 'Estas são as palavras mais repetidas por {{name}}. Confira mais em:'

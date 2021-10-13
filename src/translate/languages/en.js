@@ -53,8 +53,9 @@ const messages = {
                 whyParagraph3: 'In short, this is a vacation project motivated by the joy of learning new technologies and the fun of programming solutions.',
                 how: 'How?',
                 howParagraph: 'If you want to know more about how this application works, check the page',
-                donation1: 'This website neither displays advertisements nor sells products. So please consider making a',
-                donation2: 'to help me keep it running by clicking the button below.',
+                donation1: 'This website neither displays advertisements nor sells products.',
+                donation2: ' So please consider making a',
+                donation3: 'to help me keep it running by clicking the button below.',
             },
             genres: {
                 allGenres: 'All genres'
@@ -104,7 +105,8 @@ const messages = {
                 line4: 'receive sponsorship.',
                 donate1: 'Therefore, consider making a',
                 donate2: 'to help me keep it running!',
-                donate3: 'Just click on the button above to make your donation via'
+                donate3: 'Just click on the button above to make your donation via',
+                highCosts: 'Maintaining this website requires a lot of time and dedication, and generates server costs.'
             },
             shareModal: {
                 twitterBody: 'These are the most repeated words by {{name}}. Check out more at:'

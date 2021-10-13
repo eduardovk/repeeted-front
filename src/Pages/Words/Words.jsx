@@ -9,12 +9,13 @@ import PageLoading from "../../Components/PageLoading";
 import { scrollToTop } from '../../Helpers';
 import { i18n } from '../../translate/i18n';
 import { GlobalContext } from '../../Contexts/GlobalContext';
+import AdSense from 'react-adsense';
 const axios = require('axios').default;
+
 
 function Words() {
     const { slug } = useParams();
-    const { apiURL } = useContext(GlobalContext);
-    const { wordsFilter } = useContext(GlobalContext);
+    const { apiURL, wordsFilter, showAds } = useContext(GlobalContext);
     const [loading, setLoading] = useState(true);
     const [loadingRelated, setLoadingRelated] = useState(true);
     const [artist, setArtist] = useState(null);
@@ -59,6 +60,14 @@ function Words() {
         <>
             {loading ? (<PageLoading />) : (
                 <div className="container">
+                    {showAds === "true" ? (<AdSense.Google
+                        client='ca-pub-6738018853148289'
+                        slot='4894881331'
+                        style={{ display: 'block' }}
+                        format='auto'
+                        responsive='true'
+                        layoutKey='-gw-1+2a-9x+5c'
+                    />) : (<></>)}
                     <ArtistInfo artist={artist} total_songs={songsData.total_songs} total_words={songsData.total_words} />
                     <h2>*{i18n.t('wordsPage.mostRepeated')} {artist.name}</h2>
                     <div className="shadow animate__animated animate__backInUp">
