@@ -61,8 +61,8 @@ function Words() {
             {loading ? (<PageLoading />) : (
                 <div className="container">
                     {showAds === "true" ? (<AdSense.Google
-                        client='ca-pub-6738018853148289'
-                        slot='4894881331'
+                        client='ca-pub-0784450957182617'
+                        slot='6157089592'
                         style={{ display: 'block' }}
                         format='auto'
                         responsive='true'
